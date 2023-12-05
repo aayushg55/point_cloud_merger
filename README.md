@@ -1,5 +1,5 @@
 # Lidar Point Cloud Merger
-Combines the point clouds from 3 topics and publishes the merged point cloud in real-time. 
+Combines the point clouds from 3 topics and publishes the merged point cloud. 
 
 
 ## Steps

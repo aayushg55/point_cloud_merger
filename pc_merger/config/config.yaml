@@ -11,3 +11,5 @@
     front_lidar_frame: "luminar_front"
     right_lidar_frame: "luminar_right"
     left_lidar_frame: "luminar_left"
+
+    pub_freq: 10.0

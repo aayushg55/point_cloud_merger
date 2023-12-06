@@ -102,6 +102,8 @@ class PointCloudCombiner : public rclcpp::Node {
         const std::string PARAM_RIGHT_LIDAR_FRAME = "right_lidar_frame";
         const std::string PARAM_LEFT_LIDAR_FRAME = "left_lidar_frame";
 
+        const std::string PARAM_PUB_FREQ = "pub_freq";
+
         std::string merged_pc_topic_;
         std::string front_pc_topic_;
         std::string left_pc_topic_;
@@ -110,6 +112,7 @@ class PointCloudCombiner : public rclcpp::Node {
         std::string front_lidar_frame_;
         std::string left_lidar_frame_;
         std::string right_lidar_frame_;
+        float pub_freq_;
         rclcpp::Time latest_time_;
 
         int num_left_;

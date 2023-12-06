@@ -14,6 +14,8 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     this->declare_parameter(PARAM_LEFT_LIDAR_FRAME);
     this->declare_parameter(PARAM_RIGHT_LIDAR_FRAME);
 
+    this->declare_parameter(PARAM_PUB_FREQ);
+
     // Read parameters
     if (!this->get_parameter(PARAM_MERGED_PC_TOPIC, merged_pc_topic_)) {
         RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_MERGED_PC_TOPIC.c_str());
@@ -35,6 +37,9 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     }
     if (!this->get_parameter(PARAM_RIGHT_LIDAR_FRAME, right_lidar_frame_)) {
         RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_RIGHT_LIDAR_FRAME.c_str());
+    }
+    if (!this->get_parameter(PARAM_PUB_FREQ, pub_freq_)) {
+        RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_PUB_FREQ.c_str());
     }
 
     rclcpp::QoS qos_profile = rclcpp::QoS(rclcpp::KeepLast(1))  // Keep the last 10 messages
@@ -68,7 +73,8 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
     // Create a timer that calls the timerCallback function at a fixed rate
-    timer_ = this->create_wall_timer(std::chrono::milliseconds(40), std::bind(&PointCloudCombiner::timerCallback, this));
+    int timer_dur = int(1000/pub_freq_ * 0.8);
+    timer_ = this->create_wall_timer(std::chrono::milliseconds(timer_dur), std::bind(&PointCloudCombiner::timerCallback, this));
     num_left_ = num_right_ = num_front_ = 0;
   }
 

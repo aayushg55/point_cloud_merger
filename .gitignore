@@ -1,0 +1,92 @@
+# big binary file
+core
+
+# Mac artifacts
+.DS_Store
+**/.DS_Store
+
+# ROS2 build folders.
+**/build/**
+**/install/**
+**/build_isolated/**
+**/install_isolated/**
+**/devel/**
+*cmake-build*
+tests/
+
+# Log directories.
+**/log/**
+**/logs/**
+**/log_folder/**
+
+# Python caches.
+**/__pycache__/**
+**/.eggs/**
+
+## Coverage and Doxygen Artifacts
+lcov/
+.cov/
+html/
+xml/
+latex/
+.coverage*
+.msg.md
+/docs/_build
+/coverage
+lcov.base
+lcov.test
+lcov.total
+lcov.total.filtered
+
+## XCode / Mac Artifacts
+.DS_Store
+**/.DS_Store
+xcuserdata/
+
+## MSVC Artifacts
+.vscode/
+.vs/
+.devcontainer/
+
+## CLion Artifacts
+cmake-build-debug
+.cmake-build-debug
+.idea
+
+## Clang Complete Artifacts (used by Atom)
+/.clang_complete
+/tags
+
+## Valgrind and Callgrind
+vgcore.*
+*.log
+*.out*
+
+## Vizdep
+*.dot
+*.pickle
+*.svg
+
+## X-Compile Artifacts
+target_fs/
+
+## Miscellaneous
+*.cmd
+*.tmp
+*.user
+*.db
+*.opendb
+*.swp
+*.swo
+*.gch
+*.patch
+
+## python notebook checkpoints
+*.ipynb_checkpoints/
+
+## VCS files
+src/external/**
+
+# ROS Bag files
+*.db3
+*.mcap

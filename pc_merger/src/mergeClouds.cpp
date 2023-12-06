@@ -1,4 +1,5 @@
 #include "mergeClouds.hpp"
+#include <chrono>
 
 PointCloudCombiner::PointCloudCombiner(const std::string &name) 
     : Node(name)
@@ -36,13 +37,12 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
         RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_RIGHT_LIDAR_FRAME.c_str());
     }
 
-    // Create publishers for the combined point cloud
-    combined_publisher_ =
-        this->create_publisher<sensor_msgs::msg::PointCloud2>(merged_pc_topic_, 10);
-
-    rclcpp::QoS qos_profile = rclcpp::QoS(rclcpp::KeepLast(10))  // Keep the last 10 messages
+    rclcpp::QoS qos_profile = rclcpp::QoS(rclcpp::KeepLast(1))  // Keep the last 10 messages
         .best_effort()            // Use best-effort reliability
         .durability_volatile();
+    // Create publishers for the combined point cloud
+    combined_publisher_ =
+        this->create_publisher<sensor_msgs::msg::PointCloud2>(merged_pc_topic_, 1);
 
     // // Create subscribers for the individual point clouds
     std::function<void(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg)> cb_front = std::bind(
@@ -66,7 +66,19 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
 
     tf_buffer_ = std::make_shared<tf2_ros::Buffer>(get_clock());
     tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+
+    // Create a timer that calls the timerCallback function at a fixed rate
+    timer_ = this->create_wall_timer(std::chrono::milliseconds(40), std::bind(&PointCloudCombiner::timerCallback, this));
+    num_left_ = num_right_ = num_front_ = 0;
   }
+
+void PointCloudCombiner::timerCallback() {
+    // auto start_time = std::chrono::high_resolution_clock::now();
+    publishCombinedPointCloud();
+    // auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start_time);
+    // std::cout << "Time taken to publish: " << duration.count() << " microseconds" << std::endl;
+    // printf("front: %d, left %d, right %d\n", num_front_, num_left_, num_right_);
+}
 
 pcl::PointCloud<PointXYZIRT>::Ptr PointCloudCombiner::getTargetCloud(const std::string& topic) {
     if (topic == front_pc_topic_) {
@@ -82,33 +94,51 @@ pcl::PointCloud<PointXYZIRT>::Ptr PointCloudCombiner::getTargetCloud(const std::
 }
 
 void PointCloudCombiner::cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName) {
-    rclcpp::Time timeStamp = cloudMsg->header.stamp;
+    auto start_time = std::chrono::high_resolution_clock::now();
+    latest_time_ = cloudMsg->header.stamp;
+
+    if (topicName == front_pc_topic_)
+        num_front_ += 1;
+    else if (topicName == left_pc_topic_)
+        num_left_ += 1;
+    else if (topicName == right_pc_topic_)
+        num_right_ += 1;
 
     auto targetCloud = getTargetCloud(topicName);
     targetCloud->clear();
+    // auto duration1 = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start_time);
+    // std::cout << "Time taken by clear in " << topicName << " callback: " << duration1.count() << " microseconds" << std::endl;
 
     // Transform the point cloud to front_lidar_frame_
     if (topicName != front_pc_topic_)
         pcl_ros::transformPointCloud(front_lidar_frame_, *cloudMsg, *cloudMsg, *tf_buffer_);
     pcl::fromROSMsg(*cloudMsg, *targetCloud);
 
+    // auto duration2 = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start_time);
+    // std::cout << "Time taken by transform in " << topicName << " callback: " << duration2.count() << " microseconds" << std::endl;
+
     // Publish the combined point cloud
-    if (topicName == front_pc_topic_)
-        publishCombinedPointCloud(timeStamp);
+    // if (topicName == front_pc_topic_)
+    // publishCombinedPointCloud();
+
+    // auto end_time = std::chrono::high_resolution_clock::now();
+    // auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+    // std::cout << "Time taken by " << topicName << " callback: " << duration.count() << " microseconds" << std::endl;
 } 
 
 // Publish the combined point cloud
-void PointCloudCombiner::publishCombinedPointCloud(rclcpp::Time timeStamp) {
+void PointCloudCombiner::publishCombinedPointCloud() {
     // Merge the point clouds
     merged_cloud_->clear();
     *merged_cloud_ += *left_cloud_;
     *merged_cloud_ += *right_cloud_;
     *merged_cloud_ += *front_cloud_;
+    // printf("front: %d, left %d, right %d\n", num_front_, num_left_, num_right_);
 
     sensor_msgs::msg::PointCloud2 combined_msg;
     pcl::toROSMsg(*merged_cloud_, combined_msg);
-    combined_msg.header.stamp = timeStamp;
-    combined_msg.header.frame_id = front_lidar_frame_;  // Assuming the front frame
+    combined_msg.header.stamp = latest_time_;
+    combined_msg.header.frame_id = front_lidar_frame_;
     combined_publisher_->publish(combined_msg);
 }
 

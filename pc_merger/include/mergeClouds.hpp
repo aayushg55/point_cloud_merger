@@ -75,53 +75,58 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIRT,
 // }
 
 class PointCloudCombiner : public rclcpp::Node {
- public:
+    public:
 
-  PointCloudCombiner(const std::string &name);
-  ~PointCloudCombiner() = default;
+        PointCloudCombiner(const std::string &name);
+        ~PointCloudCombiner() = default;
 
-  void cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName);
+    private:
+        void publishCombinedPointCloud();
+        void timerCallback();
+        void cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName);
 
- private:
-  void publishCombinedPointCloud(rclcpp::Time timeStamp);
-  pcl::PointCloud<PointXYZIRT>::Ptr getTargetCloud(const std::string& topic);
+        pcl::PointCloud<PointXYZIRT>::Ptr getTargetCloud(const std::string& topic);
 
-  // Point Clouds
-  pcl::PointCloud<PointXYZIRT>::Ptr merged_cloud_;
-  pcl::PointCloud<PointXYZIRT>::Ptr front_cloud_;
-  pcl::PointCloud<PointXYZIRT>::Ptr left_cloud_;
-  pcl::PointCloud<PointXYZIRT>::Ptr right_cloud_;
+        // Point Clouds
+        pcl::PointCloud<PointXYZIRT>::Ptr merged_cloud_;
+        pcl::PointCloud<PointXYZIRT>::Ptr front_cloud_;
+        pcl::PointCloud<PointXYZIRT>::Ptr left_cloud_;
+        pcl::PointCloud<PointXYZIRT>::Ptr right_cloud_;
 
-  const std::string PARAM_MERGED_PC_TOPIC = "merged_pc_topic";
-  const std::string PARAM_FRONT_PC_TOPIC = "front_pc_topic";
-  const std::string PARAM_LEFT_PC_TOPIC = "left_pc_topic";
-  const std::string PARAM_RIGHT_PC_TOPIC = "right_pc_topic";
+        const std::string PARAM_MERGED_PC_TOPIC = "merged_pc_topic";
+        const std::string PARAM_FRONT_PC_TOPIC = "front_pc_topic";
+        const std::string PARAM_LEFT_PC_TOPIC = "left_pc_topic";
+        const std::string PARAM_RIGHT_PC_TOPIC = "right_pc_topic";
 
-  const std::string PARAM_FRONT_LIDAR_FRAME = "front_lidar_frame";
-  const std::string PARAM_RIGHT_LIDAR_FRAME = "right_lidar_frame";
-  const std::string PARAM_LEFT_LIDAR_FRAME = "left_lidar_frame";
-  
-  std::string merged_pc_topic_;
-  std::string front_pc_topic_;
-  std::string left_pc_topic_;
-  std::string right_pc_topic_;
+        const std::string PARAM_FRONT_LIDAR_FRAME = "front_lidar_frame";
+        const std::string PARAM_RIGHT_LIDAR_FRAME = "right_lidar_frame";
+        const std::string PARAM_LEFT_LIDAR_FRAME = "left_lidar_frame";
 
-  std::string front_lidar_frame_;
-  std::string left_lidar_frame_;
-  std::string right_lidar_frame_;
+        std::string merged_pc_topic_;
+        std::string front_pc_topic_;
+        std::string left_pc_topic_;
+        std::string right_pc_topic_;
 
-  //Publisher
-  rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr combined_publisher_;
+        std::string front_lidar_frame_;
+        std::string left_lidar_frame_;
+        std::string right_lidar_frame_;
+        rclcpp::Time latest_time_;
 
-  //Subscribers
-  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr left_subscriber_;
-  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr right_subscriber_;
-  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr front_subscriber_;
-  
-  std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
-  std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+        int num_left_;
+        int num_right_;
+        int num_front_;
+
+        //Publisher
+        rclcpp::TimerBase::SharedPtr timer_;
+        rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr combined_publisher_;
+
+        //Subscribers
+        rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr left_subscriber_;
+        rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr right_subscriber_;
+        rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr front_subscriber_;
+
+        std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
+        std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
 };
-
-
 
 #endif  // MERGE_CLOUDS_H

@@ -1,0 +1,4 @@
+Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --install /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger
+Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --install /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger

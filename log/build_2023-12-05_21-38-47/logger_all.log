@@ -1,0 +1,103 @@
+[0.107s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.108s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb8cf9100>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb8cf9100>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb8cf9580>)
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.132s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ubuntu/bags/pc_merger_ws/src'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extension 'colcon_pkg'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extensions ['colcon_meta']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extension 'colcon_meta'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extensions ['ros']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(pc_meger) by extension 'ros'
+[0.155s] DEBUG:colcon.colcon_core.package_identification:Package 'pc_meger' with type 'ros.ament_cmake' and name 'pc_merger'
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.177s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 285 installed packages in /opt/ros/galactic
+[0.179s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.231s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'cmake_args' from command line to 'None'
+[0.234s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'cmake_target' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'cmake_clean_cache' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'cmake_clean_first' from command line to 'False'
+[0.242s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'cmake_force_configure' from command line to 'False'
+[0.242s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'ament_cmake_args' from command line to 'None'
+[0.244s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'catkin_cmake_args' from command line to 'None'
+[0.245s] Level 5:colcon.colcon_core.verb:set package 'pc_merger' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.246s] DEBUG:colcon.colcon_core.verb:Building package 'pc_merger' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger', 'merge_install': False, 'path': '/home/ubuntu/bags/pc_merger_ws/src/pc_meger', 'symlink_install': False, 'test_result_base': None}
+[0.248s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.251s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.251s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ubuntu/bags/pc_merger_ws/src/pc_meger' with build type 'ament_cmake'
+[0.252s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ubuntu/bags/pc_merger_ws/src/pc_meger'
+[0.255s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.256s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.256s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.285s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[11.380s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '2': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[11.418s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pc_merger)
+[11.427s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger' for CMake module files
+[11.451s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger' for CMake config files
+[11.454s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/bin'
+[11.455s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/pkgconfig/pc_merger.pc'
+[11.456s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/python3.8/site-packages'
+[11.457s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/bin'
+[11.459s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.ps1'
+[11.472s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.dsv'
+[11.479s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.sh'
+[11.481s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.bash'
+[11.482s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.zsh'
+[11.483s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/colcon-core/packages/pc_merger)
+[11.495s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[11.497s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[11.497s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[11.499s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[11.513s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[11.514s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[11.515s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[11.515s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[11.546s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[11.547s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[11.548s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/bags/pc_merger_ws/src/install/local_setup.ps1'
+[11.550s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/bags/pc_merger_ws/src/install/_local_setup_util_ps1.py'
+[11.552s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/bags/pc_merger_ws/src/install/setup.ps1'
+[11.554s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/bags/pc_merger_ws/src/install/local_setup.sh'
+[11.555s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/bags/pc_merger_ws/src/install/_local_setup_util_sh.py'
+[11.557s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/bags/pc_merger_ws/src/install/setup.sh'
+[11.559s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/bags/pc_merger_ws/src/install/local_setup.bash'
+[11.560s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/bags/pc_merger_ws/src/install/setup.bash'
+[11.563s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/bags/pc_merger_ws/src/install/local_setup.zsh'
+[11.564s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/bags/pc_merger_ws/src/install/setup.zsh'

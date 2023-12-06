@@ -1,0 +1,29 @@
+[35m[1mScanning dependencies of target pc_merger[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/pc_merger.dir/src/mergeClouds.cpp.o[0m
+[100%] [32m[1mLinking CXX executable pc_merger[0m
+[100%] Built target pc_merger
+-- Install configuration: ""
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/pc_merger/pc_merger
+-- Set runtime path of "/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/pc_merger/pc_merger" to ""
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/robot.urdf.xacro
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/params.yaml
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/rviz2.rviz
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/launch
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/launch/run.launch.py
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/package_run_dependencies/pc_merger
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/parent_prefix_path/pc_merger
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/ament_prefix_path.sh
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/ament_prefix_path.dsv
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/path.sh
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/path.dsv
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.bash
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.sh
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.zsh
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.dsv
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.dsv
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/packages/pc_merger
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/pc_mergerConfig.cmake
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/pc_mergerConfig-version.cmake
+-- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.xml

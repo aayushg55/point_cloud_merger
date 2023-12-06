@@ -1,0 +1,4 @@
+source;share/pc_merger/local_setup.bash
+source;share/pc_merger/local_setup.dsv
+source;share/pc_merger/local_setup.sh
+source;share/pc_merger/local_setup.zsh

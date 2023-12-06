@@ -1,0 +1,102 @@
+[0.000000] (-) TimerEvent: {}
+[0.000384] (pc_merger) JobQueued: {'identifier': 'pc_merger', 'dependencies': OrderedDict()}
+[0.000624] (pc_merger) JobStarted: {'identifier': 'pc_merger'}
+[0.021409] (pc_merger) JobProgress: {'identifier': 'pc_merger', 'progress': 'cmake'}
+[0.023528] (pc_merger) Command: {'cmd': ['/usr/bin/cmake', '/home/ubuntu/bags/pc_merger_ws/src/pc_meger', '-DCMAKE_INSTALL_PREFIX=/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger'], 'cwd': '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger', 'env': OrderedDict([('USER', 'ubuntu'), ('HOSTNAME', 'd60cd71c3916'), ('GIT_ASKPASS', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/aarch64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib'), ('BROWSER', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/helpers/browser.sh'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/bags'), ('TERM_PROGRAM_VERSION', '1.84.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-ddd2bd13-8b1c-4022-bebd-63f3d0ac1f6e.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node'), ('LC_CTYPE', 'C.UTF-8'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'galactic'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-02bb064f-03c9-435f-ae1e-65a7c36f8dd8.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli:/opt/ros/galactic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-02bb064f-03c9-435f-ae1e-65a7c36f8dd8.sock","/tmp/.X11-unix/X4"]'), ('DISPLAY', ':4'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-001cbcc4a2.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-02bb064f-03c9-435f-ae1e-65a7c36f8dd8.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/galactic'), ('DEBIAN_FRONTEND', 'noninteractive'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X4'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/galactic')]), 'shell': False}
+[0.099538] (-) TimerEvent: {}
+[0.200415] (-) TimerEvent: {}
+[0.301249] (-) TimerEvent: {}
+[0.336319] (pc_merger) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.401866] (-) TimerEvent: {}
+[0.494328] (pc_merger) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.502233] (-) TimerEvent: {}
+[0.514434] (pc_merger) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.602359] (-) TimerEvent: {}
+[0.653827] (pc_merger) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.658006] (pc_merger) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.702647] (-) TimerEvent: {}
+[0.803668] (-) TimerEvent: {}
+[0.856041] (pc_merger) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.866452] (pc_merger) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.867695] (pc_merger) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.872771] (pc_merger) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[0.903804] (-) TimerEvent: {}
+[1.004552] (-) TimerEvent: {}
+[1.005094] (pc_merger) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[1.006962] (pc_merger) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.105041] (-) TimerEvent: {}
+[1.167897] (pc_merger) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.182769] (pc_merger) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.183721] (pc_merger) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.204624] (pc_merger) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[1.205514] (-) TimerEvent: {}
+[1.225858] (pc_merger) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[1.226762] (pc_merger) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.305686] (-) TimerEvent: {}
+[1.324068] (pc_merger) StdoutLine: {'line': b'-- Found rclcpp: 9.2.2 (/opt/ros/galactic/share/rclcpp/cmake)\n'}
+[1.405860] (-) TimerEvent: {}
+[1.427995] (pc_merger) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.437154] (pc_merger) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[1.505976] (-) TimerEvent: {}
+[1.568499] (pc_merger) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[1.604826] (pc_merger) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/galactic/include  \n'}
+[1.606151] (-) TimerEvent: {}
+[1.691271] (pc_merger) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.706281] (-) TimerEvent: {}
+[1.757832] (pc_merger) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 3.3.1 (/opt/ros/galactic/share/rmw_implementation_cmake/cmake)\n'}
+[1.762050] (pc_merger) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 0.22.6 (/opt/ros/galactic/share/rmw_cyclonedds_cpp/cmake)\n'}
+[1.782774] (pc_merger) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[1.788315] (pc_merger) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.806524] (-) TimerEvent: {}
+[1.899170] (pc_merger) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.900457] (pc_merger) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.909825] (-) TimerEvent: {}
+[2.010556] (-) TimerEvent: {}
+[2.051268] (pc_merger) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[2.052317] (pc_merger) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[2.110706] (-) TimerEvent: {}
+[2.178762] (pc_merger) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[2.180194] (pc_merger) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[2.210900] (-) TimerEvent: {}
+[2.311519] (-) TimerEvent: {}
+[2.335038] (pc_merger) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[2.337127] (pc_merger) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.411945] (-) TimerEvent: {}
+[2.527915] (-) TimerEvent: {}
+[2.583368] (pc_merger) StdoutLine: {'line': b'-- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)\n'}
+[2.628663] (-) TimerEvent: {}
+[2.706110] (pc_merger) StdoutLine: {'line': b'-- Found tf2: 0.17.5 (/opt/ros/galactic/share/tf2/cmake)\n'}
+[2.717264] (pc_merger) StdoutLine: {'line': b'-- Found tf2_ros: 0.17.5 (/opt/ros/galactic/share/tf2_ros/cmake)\n'}
+[2.728781] (-) TimerEvent: {}
+[2.829611] (-) TimerEvent: {}
+[2.930203] (-) TimerEvent: {}
+[3.006872] (pc_merger) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.17.5 (/opt/ros/galactic/share/tf2_geometry_msgs/cmake)\n'}
+[3.018568] (pc_merger) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/galactic/share/eigen3_cmake_module/cmake)\n'}
+[3.022372] (pc_merger) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.3.7") \n'}
+[3.030313] (-) TimerEvent: {}
+[3.043200] (pc_merger) StdoutLine: {'line': b'-- Found pcl_conversions: 2.3.2 (/opt/ros/galactic/share/pcl_conversions/cmake)\n'}
+[3.135522] (-) TimerEvent: {}
+[3.224385] (pc_merger) StderrLine: {'line': b'CMake Error at CMakeLists.txt:23 (find_package):\n'}
+[3.225384] (pc_merger) StderrLine: {'line': b'  By not providing "Findcloud_msgs.cmake" in CMAKE_MODULE_PATH this project\n'}
+[3.226161] (pc_merger) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[3.226887] (pc_merger) StderrLine: {'line': b'  "cloud_msgs", but CMake did not find one.\n'}
+[3.227526] (pc_merger) StderrLine: {'line': b'\n'}
+[3.228171] (pc_merger) StderrLine: {'line': b'  Could not find a package configuration file provided by "cloud_msgs" with\n'}
+[3.229087] (pc_merger) StderrLine: {'line': b'  any of the following names:\n'}
+[3.229808] (pc_merger) StderrLine: {'line': b'\n'}
+[3.230545] (pc_merger) StderrLine: {'line': b'    cloud_msgsConfig.cmake\n'}
+[3.231352] (pc_merger) StderrLine: {'line': b'    cloud_msgs-config.cmake\n'}
+[3.232220] (pc_merger) StderrLine: {'line': b'\n'}
+[3.232866] (pc_merger) StderrLine: {'line': b'  Add the installation prefix of "cloud_msgs" to CMAKE_PREFIX_PATH or set\n'}
+[3.233520] (pc_merger) StderrLine: {'line': b'  "cloud_msgs_DIR" to a directory containing one of the above files.  If\n'}
+[3.234094] (pc_merger) StderrLine: {'line': b'  "cloud_msgs" provides a separate development package or SDK, be sure it has\n'}
+[3.234587] (pc_merger) StderrLine: {'line': b'  been installed.\n'}
+[3.235103] (-) TimerEvent: {}
+[3.235275] (pc_merger) StderrLine: {'line': b'\n'}
+[3.237214] (pc_merger) StderrLine: {'line': b'\n'}
+[3.238026] (pc_merger) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[3.243024] (pc_merger) StdoutLine: {'line': b'See also "/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger/CMakeFiles/CMakeOutput.log".\n'}
+[3.246408] (pc_merger) StdoutLine: {'line': b'See also "/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger/CMakeFiles/CMakeError.log".\n'}
+[3.248544] (pc_merger) CommandEnded: {'returncode': 1}
+[3.288716] (pc_merger) JobEnded: {'identifier': 'pc_merger', 'rc': 1}
+[3.300721] (-) EventReactorShutdown: {}

@@ -1,0 +1,116 @@
+[0.022s] Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[0.100s] [35m[1mScanning dependencies of target pc_merger[0m
+[1.776s] [ 50%] [32mBuilding CXX object CMakeFiles/pc_merger.dir/src/mergeClouds.cpp.o[0m
+[6.381s] In file included from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.381s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:45:22:[m[K [01;35m[Kwarning: [m[Kextra ‘[01m[K;[m[K’ [[01;35m[K-Wpedantic[m[K]
+[6.382s]    45 |     PCL_ADD_INTENSITY[01;35m[K;[m[K
+[6.386s]       |                      [01;35m[K^[m[K
+[6.388s]       |                      [31m[K-[m[K
+[6.444s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:[m[K In constructor ‘[01m[KPointCloudCombiner::PointCloudCombiner(const string&)[m[K’:
+[6.445s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:7:50:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.446s]     7 |     this->declare_parameter(PARAM_MERGED_PC_TOPIC[01;35m[K)[m[K;
+[6.447s]       |                                                  [01;35m[K^[m[K
+[6.448s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.449s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.449s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.450s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.450s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.451s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.452s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.453s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.453s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:8:49:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.454s]     8 |     this->declare_parameter(PARAM_FRONT_PC_TOPIC[01;35m[K)[m[K;
+[6.454s]       |                                                 [01;35m[K^[m[K
+[6.455s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.456s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.458s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.459s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.460s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.461s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.461s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.462s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.463s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:9:48:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.463s]     9 |     this->declare_parameter(PARAM_LEFT_PC_TOPIC[01;35m[K)[m[K;
+[6.464s]       |                                                [01;35m[K^[m[K
+[6.464s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.464s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.465s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.465s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.466s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.467s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.467s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.468s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.468s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:10:49:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.468s]    10 |     this->declare_parameter(PARAM_RIGHT_PC_TOPIC[01;35m[K)[m[K;
+[6.469s]       |                                                 [01;35m[K^[m[K
+[6.469s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.470s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.471s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.471s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.472s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.472s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.473s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.473s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.474s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:12:52:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.475s]    12 |     this->declare_parameter(PARAM_FRONT_LIDAR_FRAME[01;35m[K)[m[K;
+[6.475s]       |                                                    [01;35m[K^[m[K
+[6.476s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.476s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.477s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.477s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.478s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.480s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.480s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.481s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.482s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:13:51:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.482s]    13 |     this->declare_parameter(PARAM_LEFT_LIDAR_FRAME[01;35m[K)[m[K;
+[6.484s]       |                                                   [01;35m[K^[m[K
+[6.484s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.485s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.486s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.486s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.486s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.487s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.488s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.488s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.489s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:14:52:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.489s]    14 |     this->declare_parameter(PARAM_RIGHT_LIDAR_FRAME[01;35m[K)[m[K;
+[6.492s]       |                                                    [01;35m[K^[m[K
+[6.493s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.494s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.494s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.495s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.495s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.496s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.496s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.497s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[15.391s] [100%] [32m[1mLinking CXX executable pc_merger[0m
+[16.157s] [100%] Built target pc_merger
+[16.169s] Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[16.206s] Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger
+[16.213s] -- Install configuration: ""
+[16.214s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/pc_merger/pc_merger
+[16.243s] -- Set runtime path of "/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/pc_merger/pc_merger" to ""
+[16.244s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config
+[16.245s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/robot.urdf.xacro
+[16.248s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/params.yaml
+[16.253s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/rviz2.rviz
+[16.255s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/launch
+[16.256s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/launch/run.launch.py
+[16.260s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/package_run_dependencies/pc_merger
+[16.262s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/parent_prefix_path/pc_merger
+[16.265s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/ament_prefix_path.sh
+[16.266s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/ament_prefix_path.dsv
+[16.270s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/path.sh
+[16.274s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/path.dsv
+[16.277s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.bash
+[16.280s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.sh
+[16.285s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.zsh
+[16.287s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.dsv
+[16.289s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.dsv
+[16.293s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/packages/pc_merger
+[16.295s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/ament_cmake_export_include_directories-extras.cmake
+[16.297s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/pc_mergerConfig.cmake
+[16.299s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/pc_mergerConfig-version.cmake
+[16.303s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.xml
+[16.318s] Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger

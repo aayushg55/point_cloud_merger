@@ -1,0 +1,137 @@
+[0.023s] Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/ubuntu/bags/pc_merger_ws/src/pc_meger -DCMAKE_INSTALL_PREFIX=/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger
+[0.041s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.071s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.128s] -- Found rclcpp: 9.2.2 (/opt/ros/galactic/share/rclcpp/cmake)
+[0.158s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.160s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[0.283s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.320s] -- Found rmw_implementation_cmake: 3.3.1 (/opt/ros/galactic/share/rmw_implementation_cmake/cmake)
+[0.321s] -- Found rmw_cyclonedds_cpp: 0.22.6 (/opt/ros/galactic/share/rmw_cyclonedds_cpp/cmake)
+[0.336s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.442s] -- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)
+[0.526s] -- Found tf2: 0.17.5 (/opt/ros/galactic/share/tf2/cmake)
+[0.533s] -- Found tf2_ros: 0.17.5 (/opt/ros/galactic/share/tf2_ros/cmake)
+[0.789s] -- Found tf2_geometry_msgs: 0.17.5 (/opt/ros/galactic/share/tf2_geometry_msgs/cmake)
+[0.793s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/galactic/share/eigen3_cmake_module/cmake)
+[0.814s] -- Found pcl_conversions: 2.3.2 (/opt/ros/galactic/share/pcl_conversions/cmake)
+[0.962s] -- Checking for module 'eigen3'
+[0.978s] --   Found eigen3, version 3.3.7
+[1.013s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[1.014s] -- Eigen found (include: /usr/include/eigen3, version: 3.3.7)
+[1.053s] -- Found Boost: /usr/include (found suitable version "1.71.0", minimum required is "1.55.0") found components: system filesystem date_time iostreams regex 
+[1.074s] -- Checking for module 'flann'
+[1.088s] --   Found flann, version 1.9.1
+[1.128s] -- Found FLANN: /usr/lib/aarch64-linux-gnu/libflann_cpp.so  
+[1.191s] -- The imported target "vtkParseOGLExt" references the file
+[1.192s]    "/usr/bin/vtkParseOGLExt-7.1"
+[1.192s] but this file does not exist.  Possible reasons include:
+[1.193s] * The file was deleted, renamed, or moved to another location.
+[1.193s] * An install or uninstall procedure did not complete successfully.
+[1.194s] * The installation package was faulty and contained
+[1.194s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[1.195s] but not all the files it references.
+[1.195s] 
+[1.198s] -- The imported target "vtkRenderingPythonTkWidgets" references the file
+[1.198s]    "/usr/lib/aarch64-linux-gnu/libvtkRenderingPythonTkWidgets.so"
+[1.199s] but this file does not exist.  Possible reasons include:
+[1.199s] * The file was deleted, renamed, or moved to another location.
+[1.201s] * An install or uninstall procedure did not complete successfully.
+[1.201s] * The installation package was faulty and contained
+[1.202s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[1.202s] but not all the files it references.
+[1.203s] 
+[1.204s] -- The imported target "vtk" references the file
+[1.204s]    "/usr/bin/vtk"
+[1.205s] but this file does not exist.  Possible reasons include:
+[1.206s] * The file was deleted, renamed, or moved to another location.
+[1.208s] * An install or uninstall procedure did not complete successfully.
+[1.213s] * The installation package was faulty and contained
+[1.215s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[1.215s] but not all the files it references.
+[1.216s] 
+[1.216s] -- The imported target "pvtk" references the file
+[1.217s]    "/usr/bin/pvtk"
+[1.218s] but this file does not exist.  Possible reasons include:
+[1.218s] * The file was deleted, renamed, or moved to another location.
+[1.219s] * An install or uninstall procedure did not complete successfully.
+[1.219s] * The installation package was faulty and contained
+[1.220s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[1.221s] but not all the files it references.
+[1.222s] 
+[1.230s] -- Checking for module 'libusb-1.0'
+[1.248s] --   Found libusb-1.0, version 1.0.23
+[1.283s] -- Found USB_10: /usr/lib/aarch64-linux-gnu/libusb-1.0.so  
+[1.338s] -- Found OpenNI: /usr/lib/libOpenNI.so  
+[1.340s] -- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)
+[1.393s] -- Found OpenNI2: /usr/lib/libOpenNI2.so  
+[1.393s] -- OpenNI2 found (include: /usr/include/openni2, lib: /usr/lib/libOpenNI2.so)
+[1.394s] ** WARNING ** io features related to pcap will be disabled
+[1.394s] ** WARNING ** io features related to png will be disabled
+[1.405s] -- Found libusb-1.0: /usr/include  
+[1.406s] ** WARNING ** io features related to libusb-1.0 will be disabled
+[1.410s] -- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)
+[1.416s] -- OpenNI2 found (include: /usr/include/openni2, lib: /usr/lib/libOpenNI2.so)
+[1.451s] -- Found Qhull: optimized;/usr/lib/aarch64-linux-gnu/libqhull.so;debug;/usr/lib/aarch64-linux-gnu/libqhull.so  
+[1.452s] -- QHULL found (include: /usr/include, lib: optimized;/usr/lib/aarch64-linux-gnu/libqhull.so;debug;/usr/lib/aarch64-linux-gnu/libqhull.so)
+[1.456s] -- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)
+[1.467s] -- looking for PCL_COMMON
+[1.469s] -- Found PCL_COMMON: /usr/lib/aarch64-linux-gnu/libpcl_common.so  
+[1.469s] -- looking for PCL_KDTREE
+[1.470s] -- Found PCL_KDTREE: /usr/lib/aarch64-linux-gnu/libpcl_kdtree.so  
+[1.471s] -- looking for PCL_OCTREE
+[1.471s] -- Found PCL_OCTREE: /usr/lib/aarch64-linux-gnu/libpcl_octree.so  
+[1.472s] -- looking for PCL_SEARCH
+[1.473s] -- Found PCL_SEARCH: /usr/lib/aarch64-linux-gnu/libpcl_search.so  
+[1.473s] -- looking for PCL_SAMPLE_CONSENSUS
+[1.474s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so  
+[1.475s] -- looking for PCL_FILTERS
+[1.475s] -- Found PCL_FILTERS: /usr/lib/aarch64-linux-gnu/libpcl_filters.so  
+[1.476s] -- looking for PCL_2D
+[1.476s] -- Found PCL_2D: /usr/include/pcl-1.10  
+[1.477s] -- looking for PCL_GEOMETRY
+[1.477s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.10  
+[1.478s] -- looking for PCL_IO
+[1.478s] -- Found PCL_IO: /usr/lib/aarch64-linux-gnu/libpcl_io.so  
+[1.479s] -- looking for PCL_FEATURES
+[1.479s] -- Found PCL_FEATURES: /usr/lib/aarch64-linux-gnu/libpcl_features.so  
+[1.480s] -- looking for PCL_ML
+[1.481s] -- Found PCL_ML: /usr/lib/aarch64-linux-gnu/libpcl_ml.so  
+[1.481s] -- looking for PCL_SEGMENTATION
+[1.482s] -- Found PCL_SEGMENTATION: /usr/lib/aarch64-linux-gnu/libpcl_segmentation.so  
+[1.483s] -- looking for PCL_VISUALIZATION
+[1.483s] -- Found PCL_VISUALIZATION: /usr/lib/aarch64-linux-gnu/libpcl_visualization.so  
+[1.485s] -- looking for PCL_SURFACE
+[1.485s] -- Found PCL_SURFACE: /usr/lib/aarch64-linux-gnu/libpcl_surface.so  
+[1.486s] -- looking for PCL_REGISTRATION
+[1.487s] -- Found PCL_REGISTRATION: /usr/lib/aarch64-linux-gnu/libpcl_registration.so  
+[1.488s] -- looking for PCL_KEYPOINTS
+[1.490s] -- Found PCL_KEYPOINTS: /usr/lib/aarch64-linux-gnu/libpcl_keypoints.so  
+[1.490s] -- looking for PCL_TRACKING
+[1.491s] -- Found PCL_TRACKING: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so  
+[1.491s] -- looking for PCL_RECOGNITION
+[1.492s] -- Found PCL_RECOGNITION: /usr/lib/aarch64-linux-gnu/libpcl_recognition.so  
+[1.493s] -- looking for PCL_STEREO
+[1.493s] -- Found PCL_STEREO: /usr/lib/aarch64-linux-gnu/libpcl_stereo.so  
+[1.494s] -- looking for PCL_APPS
+[1.494s] -- Found PCL_APPS: /usr/lib/aarch64-linux-gnu/libpcl_apps.so  
+[1.495s] -- looking for PCL_IN_HAND_SCANNER
+[1.495s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.10  
+[1.496s] -- looking for PCL_POINT_CLOUD_EDITOR
+[1.496s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.10  
+[1.497s] -- looking for PCL_OUTOFCORE
+[1.500s] -- Found PCL_OUTOFCORE: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so  
+[1.501s] -- looking for PCL_PEOPLE
+[1.502s] -- Found PCL_PEOPLE: /usr/lib/aarch64-linux-gnu/libpcl_people.so  
+[1.502s] -- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;/usr/lib/aarch64-linux-gnu/libboost_system.so;/usr/lib/aarch64-linux-gnu/libboost_filesystem.so;/usr/lib/aarch64-linux-gnu/libboost_date_time.so;/usr/lib/aarch64-linux-gnu/libboost_iostreams.so;/usr/lib/aarch64-linux-gnu/libboost_regex.so;optimized;/usr/lib/aarch64-linux-gnu/libqhull.so;debug;/usr/lib/aarch64-linux-gnu/libqhull.so;/usr/lib/libOpenNI.so;/usr/lib/libOpenNI2.so;vtkChartsCore;vtkCommonColor;vtkCommonCore;vtksys;vtkCommonDataModel;vtkCommonMath;vtkCommonMisc;vtkCommonSystem;vtkCommonTransforms;vtkCommonExecutionModel;vtkFiltersGeneral;vtkCommonComputationalGeometry;vtkFiltersCore;vtkInfovisCore;vtkFiltersExtraction;vtkFiltersStatistics;vtkImagingFourier;vtkImagingCore;vtkalglib;vtkRenderingContext2D;vtkRenderingCore;vtkFiltersGeometry;vtkFiltersSources;vtkRenderingFreeType;/usr/lib/aarch64-linux-gnu/libfreetype.so;/usr/lib/aarch64-linux-gnu/libz.so;vtkFiltersModeling;vtkImagingSources;vtkInteractionStyle;vtkInteractionWidgets;vtkFiltersHybrid;vtkImagingColor;vtkImagingGeneral;vtkImagingHybrid;vtkIOImage;vtkDICOMParser;vtkmetaio;/usr/lib/aarch64-linux-gnu/libjpeg.so;/usr/lib/aarch64-linux-gnu/libpng.so;/usr/lib/aarch64-linux-gnu/libtiff.so;vtkRenderingAnnotation;vtkRenderingVolume;vtkIOXML;vtkIOCore;vtkIOXMLParser;/usr/lib/aarch64-linux-gnu/libexpat.so;vtkIOGeometry;vtkIOLegacy;vtkIOPLY;vtkRenderingLOD;vtkViewsContext2D;vtkViewsCore;vtkRenderingContextOpenGL2;vtkRenderingOpenGL2;FLANN::FLANN  
+[1.527s] -- Found Boost: /usr/include (found version "1.71.0") found components: thread serialization timer chrono date_time atomic 
+[1.531s] CMake Error at /opt/ros/galactic/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+[1.532s]   ament_target_dependencies() the passed package name 'cloud_msgs' was not
+[1.533s]   found before
+[1.533s] Call Stack (most recent call first):
+[1.533s]   CMakeLists.txt:45 (ament_target_dependencies)
+[1.534s] 
+[1.535s] 
+[1.535s] -- Configuring incomplete, errors occurred!
+[1.536s] See also "/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger/CMakeFiles/CMakeOutput.log".
+[1.537s] See also "/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger/CMakeFiles/CMakeError.log".
+[1.548s] Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '1': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/ubuntu/bags/pc_merger_ws/src/pc_meger -DCMAKE_INSTALL_PREFIX=/home/ubuntu/bags/pc_merger_ws/src/install/pc_merger

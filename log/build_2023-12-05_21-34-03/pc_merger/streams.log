@@ -1,0 +1,150 @@
+[0.021s] Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[0.093s] [35m[1mScanning dependencies of target pc_merger[0m
+[1.557s] [ 50%] [32mBuilding CXX object CMakeFiles/pc_merger.dir/src/mergeClouds.cpp.o[0m
+[6.313s] In file included from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.315s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:45:22:[m[K [01;35m[Kwarning: [m[Kextra ‘[01m[K;[m[K’ [[01;35m[K-Wpedantic[m[K]
+[6.315s]    45 |     PCL_ADD_INTENSITY[01;35m[K;[m[K
+[6.316s]       |                      [01;35m[K^[m[K
+[6.317s]       |                      [31m[K-[m[K
+[6.366s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:[m[K In constructor ‘[01m[KPointCloudCombiner::PointCloudCombiner(const string&)[m[K’:
+[6.366s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:7:50:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.367s]     7 |     this->declare_parameter(PARAM_MERGED_PC_TOPIC[01;35m[K)[m[K;
+[6.367s]       |                                                  [01;35m[K^[m[K
+[6.368s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.368s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.369s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.369s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.370s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.370s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.371s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.371s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.371s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:8:49:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.372s]     8 |     this->declare_parameter(PARAM_FRONT_PC_TOPIC[01;35m[K)[m[K;
+[6.372s]       |                                                 [01;35m[K^[m[K
+[6.373s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.373s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.374s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.374s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.376s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.377s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.377s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.378s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.380s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:9:48:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.380s]     9 |     this->declare_parameter(PARAM_LEFT_PC_TOPIC[01;35m[K)[m[K;
+[6.381s]       |                                                [01;35m[K^[m[K
+[6.381s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.382s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.383s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.385s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.386s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.387s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.387s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.388s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.388s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:10:49:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.389s]    10 |     this->declare_parameter(PARAM_RIGHT_PC_TOPIC[01;35m[K)[m[K;
+[6.389s]       |                                                 [01;35m[K^[m[K
+[6.390s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.390s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.391s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.391s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.392s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.392s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.393s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.393s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.394s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:12:52:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.394s]    12 |     this->declare_parameter(PARAM_FRONT_LIDAR_FRAME[01;35m[K)[m[K;
+[6.395s]       |                                                    [01;35m[K^[m[K
+[6.395s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.396s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.396s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.396s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.397s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.397s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.398s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.398s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.399s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:13:51:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.399s]    13 |     this->declare_parameter(PARAM_LEFT_LIDAR_FRAME[01;35m[K)[m[K;
+[6.400s]       |                                                   [01;35m[K^[m[K
+[6.400s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.401s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.401s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.402s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.402s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.403s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.403s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.404s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.404s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:14:52:[m[K [01;35m[Kwarning: [m[K‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)[m[K’ is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\nIf you want to declare a parameter that won't change type without a default value use:\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\n\nIf you want to declare a parameter that can dynamically change type use:\n```\nrcl_interfaces::msg::ParameterDescriptor descriptor;\ndescriptor.dynamic_typing = true;\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\n``` [[01;35m[K-Wdeprecated-declarations[m[K]
+[6.405s]    14 |     this->declare_parameter(PARAM_RIGHT_LIDAR_FRAME[01;35m[K)[m[K;
+[6.405s]       |                                                    [01;35m[K^[m[K
+[6.407s] In file included from [01m[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[6.407s]                  from [01m[K/opt/ros/galactic/include/rclcpp/executors.hpp:22[m[K,
+[6.408s]                  from [01m[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156[m[K,
+[6.408s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5[m[K,
+[6.409s]                  from [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1[m[K:
+[6.410s] [01m[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[6.411s]   422 |   [01;36m[Kdeclare_parameter[m[K(const std::string & name);
+[6.411s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.412s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:45:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ in namespace ‘[01m[Kstd_msgs::msg[m[K’ does not name a type
+[6.412s]    58 |     std::function<void(const std_msgs::msg::[01;31m[KString[m[K::SharedPtr msg)> cb_front = std::bind(
+[6.412s]       |                                             [01;31m[K^~~~~~[m[K
+[6.413s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:63:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[6.413s]    58 |     std::function<void(const std_msgs::msg::String::SharedPtr [01;31m[Kmsg[m[K)> cb_front = std::bind(
+[6.413s]       |                                                               [01;31m[K^~~[m[K
+[6.413s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:62:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[6.414s]    58 |     std::function<void[34m[K([m[Kconst std_msgs::msg::String::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)> cb_front = std::bind(
+[6.414s]       |                       [34m[K~[m[K                                      [01;31m[K^[m[K[32m[K~~~[m[K
+[6.414s]       |                                                              [32m[K)[m[K
+[6.414s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:63:[m[K [01;31m[Kerror: [m[Kexpected template-argument before ‘[01m[Kmsg[m[K’
+[6.415s]    58 |     std::function<void(const std_msgs::msg::String::SharedPtr [01;31m[Kmsg[m[K)> cb_front = std::bind(
+[6.415s]       |                                                               [01;31m[K^~~[m[K
+[6.415s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K>[m[K’ before ‘[01m[Kmsg[m[K’
+[6.417s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:66:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+[6.418s]    58 |     std::function<void(const std_msgs::msg::String::SharedPtr msg[01;31m[K)[m[K> cb_front = std::bind(
+[6.419s]       |                                                                  [01;31m[K^[m[K
+[6.420s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:45:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ in namespace ‘[01m[Kstd_msgs::msg[m[K’ does not name a type
+[6.420s]    60 |     std::function<void(const std_msgs::msg::[01;31m[KString[m[K::SharedPtr msg)> cb_left = std::bind(
+[6.421s]       |                                             [01;31m[K^~~~~~[m[K
+[6.421s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:63:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[6.422s]    60 |     std::function<void(const std_msgs::msg::String::SharedPtr [01;31m[Kmsg[m[K)> cb_left = std::bind(
+[6.422s]       |                                                               [01;31m[K^~~[m[K
+[6.423s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:62:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[6.423s]    60 |     std::function<void[34m[K([m[Kconst std_msgs::msg::String::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)> cb_left = std::bind(
+[6.424s]       |                       [34m[K~[m[K                                      [01;31m[K^[m[K[32m[K~~~[m[K
+[6.424s]       |                                                              [32m[K)[m[K
+[6.425s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:63:[m[K [01;31m[Kerror: [m[Kexpected template-argument before ‘[01m[Kmsg[m[K’
+[6.425s]    60 |     std::function<void(const std_msgs::msg::String::SharedPtr [01;31m[Kmsg[m[K)> cb_left = std::bind(
+[6.425s]       |                                                               [01;31m[K^~~[m[K
+[6.426s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K>[m[K’ before ‘[01m[Kmsg[m[K’
+[6.426s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:66:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+[6.427s]    60 |     std::function<void(const std_msgs::msg::String::SharedPtr msg[01;31m[K)[m[K> cb_left = std::bind(
+[6.427s]       |                                                                  [01;31m[K^[m[K
+[6.428s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:45:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ in namespace ‘[01m[Kstd_msgs::msg[m[K’ does not name a type
+[6.428s]    62 |     std::function<void(const std_msgs::msg::[01;31m[KString[m[K::SharedPtr msg)> cb_right = std::bind(
+[6.429s]       |                                             [01;31m[K^~~~~~[m[K
+[6.429s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:63:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[6.430s]    62 |     std::function<void(const std_msgs::msg::String::SharedPtr [01;31m[Kmsg[m[K)> cb_right = std::bind(
+[6.430s]       |                                                               [01;31m[K^~~[m[K
+[6.431s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:62:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[6.431s]    62 |     std::function<void[34m[K([m[Kconst std_msgs::msg::String::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)> cb_right = std::bind(
+[6.432s]       |                       [34m[K~[m[K                                      [01;31m[K^[m[K[32m[K~~~[m[K
+[6.432s]       |                                                              [32m[K)[m[K
+[6.433s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:63:[m[K [01;31m[Kerror: [m[Kexpected template-argument before ‘[01m[Kmsg[m[K’
+[6.433s]    62 |     std::function<void(const std_msgs::msg::String::SharedPtr [01;31m[Kmsg[m[K)> cb_right = std::bind(
+[6.434s]       |                                                               [01;31m[K^~~[m[K
+[6.434s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K>[m[K’ before ‘[01m[Kmsg[m[K’
+[6.434s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:66:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+[6.435s]    62 |     std::function<void(const std_msgs::msg::String::SharedPtr msg[01;31m[K)[m[K> cb_right = std::bind(
+[6.435s]       |                                                                  [01;31m[K^[m[K
+[6.436s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:67:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kcb_front[m[K’ was not declared in this scope
+[6.436s]    67 |         front_pc_topic_, qos_profile, ([01;31m[Kcb_front[m[K));
+[6.437s]       |                                        [01;31m[K^~~~~~~~[m[K
+[6.437s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:69:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kcb_right[m[K’ was not declared in this scope
+[6.439s]    69 |         right_pc_topic_, qos_profile, ([01;31m[Kcb_right[m[K));
+[6.439s]       |                                        [01;31m[K^~~~~~~~[m[K
+[6.440s] [01m[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:71:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kcb_left[m[K’ was not declared in this scope
+[6.440s]    71 |         left_pc_topic_, qos_profile, ([01;31m[Kcb_left[m[K));
+[6.441s]       |                                       [01;31m[K^~~~~~~[m[K
+[10.154s] make[2]: *** [CMakeFiles/pc_merger.dir/build.make:63: CMakeFiles/pc_merger.dir/src/mergeClouds.cpp.o] Error 1
+[10.156s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/pc_merger.dir/all] Error 2
+[10.157s] make: *** [Makefile:141: all] Error 2
+[10.163s] Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '2': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8

@@ -1,0 +1,29 @@
+[0.032s] Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[0.147s] [100%] Built target pc_merger
+[0.160s] Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --build /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger -- -j8 -l8
+[0.194s] Invoking command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --install /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger
+[0.199s] -- Install configuration: ""
+[0.201s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/lib/pc_merger/pc_merger
+[0.202s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config
+[0.203s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/robot.urdf.xacro
+[0.204s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/config.yaml
+[0.208s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/config/rviz2.rviz
+[0.209s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/launch
+[0.211s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/launch/run.launch.py
+[0.215s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/package_run_dependencies/pc_merger
+[0.216s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/parent_prefix_path/pc_merger
+[0.218s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/ament_prefix_path.sh
+[0.218s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/ament_prefix_path.dsv
+[0.219s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/path.sh
+[0.220s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/environment/path.dsv
+[0.220s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.bash
+[0.221s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.sh
+[0.221s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.zsh
+[0.222s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/local_setup.dsv
+[0.223s] -- Installing: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.dsv
+[0.224s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/ament_index/resource_index/packages/pc_merger
+[0.225s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.226s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/pc_mergerConfig.cmake
+[0.226s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/cmake/pc_mergerConfig-version.cmake
+[0.227s] -- Up-to-date: /home/ubuntu/bags/pc_merger_ws/src/install/pc_merger/share/pc_merger/package.xml
+[0.231s] Invoked command in '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/galactic /usr/bin/cmake --install /home/ubuntu/bags/pc_merger_ws/src/build/pc_merger

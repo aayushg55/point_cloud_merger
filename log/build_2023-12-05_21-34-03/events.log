@@ -1,0 +1,258 @@
+[0.000000] (-) TimerEvent: {}
+[0.000284] (pc_merger) JobQueued: {'identifier': 'pc_merger', 'dependencies': OrderedDict()}
+[0.000496] (pc_merger) JobStarted: {'identifier': 'pc_merger'}
+[0.011234] (pc_merger) JobProgress: {'identifier': 'pc_merger', 'progress': 'cmake'}
+[0.014398] (pc_merger) JobProgress: {'identifier': 'pc_merger', 'progress': 'build'}
+[0.015285] (pc_merger) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger', 'env': OrderedDict([('USER', 'ubuntu'), ('HOSTNAME', 'd60cd71c3916'), ('GIT_ASKPASS', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/aarch64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib'), ('BROWSER', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/helpers/browser.sh'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/bags'), ('TERM_PROGRAM_VERSION', '1.84.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-ddd2bd13-8b1c-4022-bebd-63f3d0ac1f6e.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node'), ('LC_CTYPE', 'C.UTF-8'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'galactic'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-02bb064f-03c9-435f-ae1e-65a7c36f8dd8.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/home/ubuntu/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli:/opt/ros/galactic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-02bb064f-03c9-435f-ae1e-65a7c36f8dd8.sock","/tmp/.X11-unix/X4"]'), ('DISPLAY', ':4'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-001cbcc4a2.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-02bb064f-03c9-435f-ae1e-65a7c36f8dd8.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/galactic'), ('DEBIAN_FRONTEND', 'noninteractive'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X4'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ubuntu/bags/pc_merger_ws/src/build/pc_merger'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/galactic')]), 'shell': False}
+[0.093352] (pc_merger) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target pc_merger\x1b[0m\n'}
+[0.099624] (-) TimerEvent: {}
+[0.200030] (-) TimerEvent: {}
+[0.300552] (-) TimerEvent: {}
+[0.401110] (-) TimerEvent: {}
+[0.501911] (-) TimerEvent: {}
+[0.602457] (-) TimerEvent: {}
+[0.703042] (-) TimerEvent: {}
+[0.803596] (-) TimerEvent: {}
+[0.904033] (-) TimerEvent: {}
+[1.004528] (-) TimerEvent: {}
+[1.105072] (-) TimerEvent: {}
+[1.205892] (-) TimerEvent: {}
+[1.306697] (-) TimerEvent: {}
+[1.407194] (-) TimerEvent: {}
+[1.507723] (-) TimerEvent: {}
+[1.557284] (pc_merger) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pc_merger.dir/src/mergeClouds.cpp.o\x1b[0m\n'}
+[1.608056] (-) TimerEvent: {}
+[1.709180] (-) TimerEvent: {}
+[1.810242] (-) TimerEvent: {}
+[1.910873] (-) TimerEvent: {}
+[2.011847] (-) TimerEvent: {}
+[2.113616] (-) TimerEvent: {}
+[2.214128] (-) TimerEvent: {}
+[2.314875] (-) TimerEvent: {}
+[2.415796] (-) TimerEvent: {}
+[2.516360] (-) TimerEvent: {}
+[2.616990] (-) TimerEvent: {}
+[2.717668] (-) TimerEvent: {}
+[2.818791] (-) TimerEvent: {}
+[2.919322] (-) TimerEvent: {}
+[3.020028] (-) TimerEvent: {}
+[3.120799] (-) TimerEvent: {}
+[3.223162] (-) TimerEvent: {}
+[3.323842] (-) TimerEvent: {}
+[3.427190] (-) TimerEvent: {}
+[3.533290] (-) TimerEvent: {}
+[3.634784] (-) TimerEvent: {}
+[3.736506] (-) TimerEvent: {}
+[3.837310] (-) TimerEvent: {}
+[3.938622] (-) TimerEvent: {}
+[4.039205] (-) TimerEvent: {}
+[4.139722] (-) TimerEvent: {}
+[4.240376] (-) TimerEvent: {}
+[4.341042] (-) TimerEvent: {}
+[4.441626] (-) TimerEvent: {}
+[4.544817] (-) TimerEvent: {}
+[4.646309] (-) TimerEvent: {}
+[4.746963] (-) TimerEvent: {}
+[4.847477] (-) TimerEvent: {}
+[4.948168] (-) TimerEvent: {}
+[5.049961] (-) TimerEvent: {}
+[5.153103] (-) TimerEvent: {}
+[5.253888] (-) TimerEvent: {}
+[5.354538] (-) TimerEvent: {}
+[5.455386] (-) TimerEvent: {}
+[5.556147] (-) TimerEvent: {}
+[5.658013] (-) TimerEvent: {}
+[5.761416] (-) TimerEvent: {}
+[5.862872] (-) TimerEvent: {}
+[5.963612] (-) TimerEvent: {}
+[6.064502] (-) TimerEvent: {}
+[6.166605] (-) TimerEvent: {}
+[6.269308] (-) TimerEvent: {}
+[6.313344] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.314711] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:45:22:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kextra \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[6.315724] (pc_merger) StderrLine: {'line': b'   45 |     PCL_ADD_INTENSITY\x1b[01;35m\x1b[K;\x1b[m\x1b[K\n'}
+[6.316472] (pc_merger) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.317244] (pc_merger) StderrLine: {'line': b'      |                      \x1b[31m\x1b[K-\x1b[m\x1b[K\n'}
+[6.365584] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KPointCloudCombiner::PointCloudCombiner(const string&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.366515] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:7:50:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.367115] (pc_merger) StderrLine: {'line': b'    7 |     this->declare_parameter(PARAM_MERGED_PC_TOPIC\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.367595] (pc_merger) StderrLine: {'line': b'      |                                                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.368028] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.368658] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.369107] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.369530] (-) TimerEvent: {}
+[6.369713] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.370146] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.370582] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.371021] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.371454] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.371951] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:8:49:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.372405] (pc_merger) StderrLine: {'line': b'    8 |     this->declare_parameter(PARAM_FRONT_PC_TOPIC\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.372864] (pc_merger) StderrLine: {'line': b'      |                                                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.373410] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.373940] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.374411] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.374876] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.375347] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.377144] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.377624] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.378246] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.379054] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:9:48:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.380666] (pc_merger) StderrLine: {'line': b'    9 |     this->declare_parameter(PARAM_LEFT_PC_TOPIC\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.381249] (pc_merger) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.381776] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.382438] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.383108] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.383793] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.385625] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.387002] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.387690] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.388189] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.388759] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:10:49:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.389281] (pc_merger) StderrLine: {'line': b'   10 |     this->declare_parameter(PARAM_RIGHT_PC_TOPIC\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.389854] (pc_merger) StderrLine: {'line': b'      |                                                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.390308] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.390818] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.391324] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.391905] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.392343] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.392823] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.393264] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.393703] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.394132] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:12:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.394642] (pc_merger) StderrLine: {'line': b'   12 |     this->declare_parameter(PARAM_FRONT_LIDAR_FRAME\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.395103] (pc_merger) StderrLine: {'line': b'      |                                                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.395540] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.396020] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.396498] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.396997] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.397430] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.397861] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.398317] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.398773] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.399206] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:13:51:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.399723] (pc_merger) StderrLine: {'line': b'   13 |     this->declare_parameter(PARAM_LEFT_LIDAR_FRAME\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.400280] (pc_merger) StderrLine: {'line': b'      |                                                   \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.400816] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.401298] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.401898] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.402389] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.402922] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.403364] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.403823] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.404264] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.404732] (pc_merger) StderrLine: {'line': b"\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:14:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&)\x1b[m\x1b[K\xe2\x80\x99 is deprecated: declare_parameter() with only a name is deprecated and will be deleted in the future.\\nIf you want to declare a parameter that won't change type without a default value use:\\n`node->declare_parameter<ParameterT>(name)`, where e.g. ParameterT=int64_t.\\n\\nIf you want to declare a parameter that can dynamically change type use:\\n```\\nrcl_interfaces::msg::ParameterDescriptor descriptor;\\ndescriptor.dynamic_typing = true;\\nnode->declare_parameter(name, rclcpp::ParameterValue{}, descriptor);\\n``` [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n"}
+[6.405178] (pc_merger) StderrLine: {'line': b'   14 |     this->declare_parameter(PARAM_RIGHT_LIDAR_FRAME\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.405602] (pc_merger) StderrLine: {'line': b'      |                                                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[6.406078] (pc_merger) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[6.407827] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[6.408291] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/rclcpp.hpp:156\x1b[m\x1b[K,\n'}
+[6.408728] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/include/mergeClouds.hpp:5\x1b[m\x1b[K,\n'}
+[6.409171] (pc_merger) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:1\x1b[m\x1b[K:\n'}
+[6.409840] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/galactic/include/rclcpp/node.hpp:422:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[6.411122] (pc_merger) StderrLine: {'line': b'  422 |   \x1b[01;36m\x1b[Kdeclare_parameter\x1b[m\x1b[K(const std::string & name);\n'}
+[6.411589] (pc_merger) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.411998] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KString\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[6.412504] (pc_merger) StderrLine: {'line': b'   58 |     std::function<void(const std_msgs::msg::\x1b[01;31m\x1b[KString\x1b[m\x1b[K::SharedPtr msg)> cb_front = std::bind(\n'}
+[6.412879] (pc_merger) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.413160] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.413429] (pc_merger) StderrLine: {'line': b'   58 |     std::function<void(const std_msgs::msg::String::SharedPtr \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K)> cb_front = std::bind(\n'}
+[6.413719] (pc_merger) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.413967] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.414249] (pc_merger) StderrLine: {'line': b'   58 |     std::function<void\x1b[34m\x1b[K(\x1b[m\x1b[Kconst std_msgs::msg::String::SharedPtr\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[Kmsg\x1b[m\x1b[K)> cb_front = std::bind(\n'}
+[6.414486] (pc_merger) StderrLine: {'line': b'      |                       \x1b[34m\x1b[K~\x1b[m\x1b[K                                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~~~\x1b[m\x1b[K\n'}
+[6.414769] (pc_merger) StderrLine: {'line': b'      |                                                              \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[6.415033] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected template-argument before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.415269] (pc_merger) StderrLine: {'line': b'   58 |     std::function<void(const std_msgs::msg::String::SharedPtr \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K)> cb_front = std::bind(\n'}
+[6.415537] (pc_merger) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.415805] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.416166] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:58:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.418203] (pc_merger) StderrLine: {'line': b'   58 |     std::function<void(const std_msgs::msg::String::SharedPtr msg\x1b[01;31m\x1b[K)\x1b[m\x1b[K> cb_front = std::bind(\n'}
+[6.419450] (pc_merger) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.420251] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KString\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[6.420777] (pc_merger) StderrLine: {'line': b'   60 |     std::function<void(const std_msgs::msg::\x1b[01;31m\x1b[KString\x1b[m\x1b[K::SharedPtr msg)> cb_left = std::bind(\n'}
+[6.421240] (pc_merger) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.421693] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.422276] (pc_merger) StderrLine: {'line': b'   60 |     std::function<void(const std_msgs::msg::String::SharedPtr \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K)> cb_left = std::bind(\n'}
+[6.422738] (pc_merger) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.423185] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.423669] (pc_merger) StderrLine: {'line': b'   60 |     std::function<void\x1b[34m\x1b[K(\x1b[m\x1b[Kconst std_msgs::msg::String::SharedPtr\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[Kmsg\x1b[m\x1b[K)> cb_left = std::bind(\n'}
+[6.424099] (pc_merger) StderrLine: {'line': b'      |                       \x1b[34m\x1b[K~\x1b[m\x1b[K                                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~~~\x1b[m\x1b[K\n'}
+[6.424599] (pc_merger) StderrLine: {'line': b'      |                                                              \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[6.425046] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected template-argument before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.425483] (pc_merger) StderrLine: {'line': b'   60 |     std::function<void(const std_msgs::msg::String::SharedPtr \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K)> cb_left = std::bind(\n'}
+[6.425896] (pc_merger) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.426348] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.426780] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:60:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.427265] (pc_merger) StderrLine: {'line': b'   60 |     std::function<void(const std_msgs::msg::String::SharedPtr msg\x1b[01;31m\x1b[K)\x1b[m\x1b[K> cb_left = std::bind(\n'}
+[6.427833] (pc_merger) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.428311] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KString\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[6.428796] (pc_merger) StderrLine: {'line': b'   62 |     std::function<void(const std_msgs::msg::\x1b[01;31m\x1b[KString\x1b[m\x1b[K::SharedPtr msg)> cb_right = std::bind(\n'}
+[6.429231] (pc_merger) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.429665] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.430141] (pc_merger) StderrLine: {'line': b'   62 |     std::function<void(const std_msgs::msg::String::SharedPtr \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K)> cb_right = std::bind(\n'}
+[6.430576] (pc_merger) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.431139] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.431598] (pc_merger) StderrLine: {'line': b'   62 |     std::function<void\x1b[34m\x1b[K(\x1b[m\x1b[Kconst std_msgs::msg::String::SharedPtr\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[Kmsg\x1b[m\x1b[K)> cb_right = std::bind(\n'}
+[6.432029] (pc_merger) StderrLine: {'line': b'      |                       \x1b[34m\x1b[K~\x1b[m\x1b[K                                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~~~\x1b[m\x1b[K\n'}
+[6.432438] (pc_merger) StderrLine: {'line': b'      |                                                              \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[6.432928] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected template-argument before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.433447] (pc_merger) StderrLine: {'line': b'   62 |     std::function<void(const std_msgs::msg::String::SharedPtr \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K)> cb_right = std::bind(\n'}
+[6.434023] (pc_merger) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[6.434459] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.434889] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:62:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.435319] (pc_merger) StderrLine: {'line': b'   62 |     std::function<void(const std_msgs::msg::String::SharedPtr msg\x1b[01;31m\x1b[K)\x1b[m\x1b[K> cb_right = std::bind(\n'}
+[6.435803] (pc_merger) StderrLine: {'line': b'      |                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.436276] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:67:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcb_front\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.436898] (pc_merger) StderrLine: {'line': b'   67 |         front_pc_topic_, qos_profile, (\x1b[01;31m\x1b[Kcb_front\x1b[m\x1b[K));\n'}
+[6.437407] (pc_merger) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[6.437933] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:69:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcb_right\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.438430] (pc_merger) StderrLine: {'line': b'   69 |         right_pc_topic_, qos_profile, (\x1b[01;31m\x1b[Kcb_right\x1b[m\x1b[K));\n'}
+[6.439597] (pc_merger) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[6.440139] (pc_merger) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bags/pc_merger_ws/src/pc_meger/src/mergeClouds.cpp:71:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcb_left\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.440735] (pc_merger) StderrLine: {'line': b'   71 |         left_pc_topic_, qos_profile, (\x1b[01;31m\x1b[Kcb_left\x1b[m\x1b[K));\n'}
+[6.441260] (pc_merger) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[6.470389] (-) TimerEvent: {}
+[6.571232] (-) TimerEvent: {}
+[6.671762] (-) TimerEvent: {}
+[6.774197] (-) TimerEvent: {}
+[6.876243] (-) TimerEvent: {}
+[6.979110] (-) TimerEvent: {}
+[7.079877] (-) TimerEvent: {}
+[7.180443] (-) TimerEvent: {}
+[7.281191] (-) TimerEvent: {}
+[7.382589] (-) TimerEvent: {}
+[7.483700] (-) TimerEvent: {}
+[7.587280] (-) TimerEvent: {}
+[7.687822] (-) TimerEvent: {}
+[7.788535] (-) TimerEvent: {}
+[7.889188] (-) TimerEvent: {}
+[7.989889] (-) TimerEvent: {}
+[8.092404] (-) TimerEvent: {}
+[8.196167] (-) TimerEvent: {}
+[8.298502] (-) TimerEvent: {}
+[8.400051] (-) TimerEvent: {}
+[8.501104] (-) TimerEvent: {}
+[8.601579] (-) TimerEvent: {}
+[8.704980] (-) TimerEvent: {}
+[8.805497] (-) TimerEvent: {}
+[8.906226] (-) TimerEvent: {}
+[9.006756] (-) TimerEvent: {}
+[9.107328] (-) TimerEvent: {}
+[9.208870] (-) TimerEvent: {}
+[9.310069] (-) TimerEvent: {}
+[9.410954] (-) TimerEvent: {}
+[9.511830] (-) TimerEvent: {}
+[9.612355] (-) TimerEvent: {}
+[9.712932] (-) TimerEvent: {}
+[9.814327] (-) TimerEvent: {}
+[9.916801] (-) TimerEvent: {}
+[10.020055] (-) TimerEvent: {}
+[10.121069] (-) TimerEvent: {}
+[10.154348] (pc_merger) StderrLine: {'line': b'make[2]: *** [CMakeFiles/pc_merger.dir/build.make:63: CMakeFiles/pc_merger.dir/src/mergeClouds.cpp.o] Error 1\n'}
+[10.155436] (pc_merger) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/pc_merger.dir/all] Error 2\n'}
+[10.156994] (pc_merger) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[10.160817] (pc_merger) CommandEnded: {'returncode': 2}
+[10.209034] (pc_merger) JobEnded: {'identifier': 'pc_merger', 'rc': 2}
+[10.221204] (-) TimerEvent: {}
+[10.222557] (-) EventReactorShutdown: {}

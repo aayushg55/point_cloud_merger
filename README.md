@@ -8,7 +8,7 @@ The lidar topics and frames should be configured in config.yaml
 1. Clone the repository into ~/ros2_ws/src
 2. Build the package:
    ```bash
-   cd ~/ros2_ws/src/pc_merger/src
+   cd ~/ros2_ws/src/pc_merger
    colcon_build
    ```
 3. Run the package:

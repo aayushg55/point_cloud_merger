@@ -9,10 +9,10 @@ The lidar topics and frames should be configured in config.yaml
    ```bash
    sudo apt-get install ros-galactic-pcl-ros
    ```
-3. Clone the repository into ~/ros2_ws/src
+3. Clone the repository into ~/ros2_ws
 4. Build the package:
    ```bash
-   cd ~/ros2_ws/src/pc_merger
+   cd ~/ros2_ws
    colcon_build
    ```
 5. Run the package:

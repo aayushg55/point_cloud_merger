@@ -97,17 +97,6 @@ pcl::PointCloud<PointXYZIRT>::Ptr PointCloudCombiner::getTargetCloud(const std::
 void PointCloudCombiner::cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName) {
     latest_time_ = cloudMsg->header.stamp;
     pcl::PointCloud<PointXYZIRT>::Ptr target_cloud;
-    // if (topic == front_pc_topic_) {
-    //     return front_cloud_;
-    // } else if (topic == right_pc_topic_) {
-    //     return right_cloud_;
-    // } else if (topic == left_pc_topic_) {
-    //     return left_cloud_;
-    // } else {
-    //     RCLCPP_WARN(this->get_logger(), "Unknown topic: %s", topic.c_str());
-    //     return nullptr;
-    // }
-
     auto targetCloud = getTargetCloud(topicName);
     targetCloud->clear();
 

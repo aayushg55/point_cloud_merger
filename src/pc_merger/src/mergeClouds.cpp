@@ -73,9 +73,8 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
     // Create a timer that calls the timerCallback function at a fixed rate
-    int timer_dur = int(1000/pub_freq_ * 0.8);
+    int timer_dur = int(1000/pub_freq_);
     timer_ = this->create_wall_timer(std::chrono::milliseconds(timer_dur), std::bind(&PointCloudCombiner::timerCallback, this));
-    num_left_ = num_right_ = num_front_ = 0;
   }
 
 void PointCloudCombiner::timerCallback() {
@@ -96,8 +95,18 @@ pcl::PointCloud<PointXYZIRT>::Ptr PointCloudCombiner::getTargetCloud(const std::
 }
 
 void PointCloudCombiner::cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName) {
-    auto start_time = std::chrono::high_resolution_clock::now();
     latest_time_ = cloudMsg->header.stamp;
+    pcl::PointCloud<PointXYZIRT>::Ptr target_cloud;
+    // if (topic == front_pc_topic_) {
+    //     return front_cloud_;
+    // } else if (topic == right_pc_topic_) {
+    //     return right_cloud_;
+    // } else if (topic == left_pc_topic_) {
+    //     return left_cloud_;
+    // } else {
+    //     RCLCPP_WARN(this->get_logger(), "Unknown topic: %s", topic.c_str());
+    //     return nullptr;
+    // }
 
     auto targetCloud = getTargetCloud(topicName);
     targetCloud->clear();

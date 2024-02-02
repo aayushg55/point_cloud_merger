@@ -9,17 +9,11 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl_conversions/pcl_conversions.h>
-#include <pcl/filters/filter.h>
 #include <pcl/common/common.h>
 
 #include <tf2/utils.h>
-#include <tf2/LinearMath/Quaternion.h>
 #include <tf2_ros/transform_listener.h>
-#include <tf2_ros/transform_broadcaster.h>
-#include <tf2_eigen/tf2_eigen.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
-#include <Eigen/Dense>
 #include <vector>
 #include <cmath>
 #include <algorithm>
@@ -51,28 +45,6 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIRT,
     (float, x, x) (float, y, y) (float, z, z) (float, intensity, intensity)
     (float, ring, ring) (float, time, time)
 )
-
-
-// pcl::PointCloud<PointType>::Ptr transformPointCloud(pcl::PointCloud<PointType>::Ptr cloudIn, PointTypePose* transformIn)
-// {
-//     pcl::PointCloud<PointType>::Ptr cloudOut(new pcl::PointCloud<PointType>());
-
-//     int cloudSize = cloudIn->size();
-//     cloudOut->resize(cloudSize);
-
-//     Eigen::Affine3f transCur = pcl::getTransformation(transformIn->x, transformIn->y, transformIn->z, transformIn->roll, transformIn->pitch, transformIn->yaw);
-    
-//     #pragma omp parallel for num_threads(numberOfCores)
-//     for (int i = 0; i < cloudSize; ++i)
-//     {
-//         const auto &pointFrom = cloudIn->points[i];
-//         cloudOut->points[i].x = transCur(0,0) * pointFrom.x + transCur(0,1) * pointFrom.y + transCur(0,2) * pointFrom.z + transCur(0,3);
-//         cloudOut->points[i].y = transCur(1,0) * pointFrom.x + transCur(1,1) * pointFrom.y + transCur(1,2) * pointFrom.z + transCur(1,3);
-//         cloudOut->points[i].z = transCur(2,0) * pointFrom.x + transCur(2,1) * pointFrom.y + transCur(2,2) * pointFrom.z + transCur(2,3);
-//         cloudOut->points[i].intensity = pointFrom.intensity;
-//     }
-//     return cloudOut;
-// }
 
 class PointCloudCombiner : public rclcpp::Node {
     public:
@@ -115,9 +87,9 @@ class PointCloudCombiner : public rclcpp::Node {
         float pub_freq_;
         rclcpp::Time latest_time_;
 
-        int num_left_;
-        int num_right_;
-        int num_front_;
+        int left_update_;
+        int right_update_;
+        int front_update_;
 
         //Publisher
         rclcpp::TimerBase::SharedPtr timer_;

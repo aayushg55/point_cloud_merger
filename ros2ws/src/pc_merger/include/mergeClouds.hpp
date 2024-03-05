@@ -56,6 +56,9 @@ class PointCloudCombiner : public rclcpp::Node {
         void publishCombinedPointCloud();
         void timerCallback();
         void cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName);
+        void callbackRight(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
+        void callbackLeft(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
+        void callbackFront(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
 
         pcl::PointCloud<PointXYZIRT>::Ptr getTargetCloud(const std::string& topic);
 
@@ -91,6 +94,13 @@ class PointCloudCombiner : public rclcpp::Node {
         int right_update_;
         int front_update_;
 
+        std::atomic<bool> left_recv_;
+        std::atomic<bool> front_recv_;
+        std::atomic<bool> right_recv_;
+
+        // Callback groups
+        rclcpp::CallbackGroup::SharedPtr left_cb_group, right_cb_group, front_cb_group;
+
         //Publisher
         rclcpp::TimerBase::SharedPtr timer_;
         rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr combined_publisher_;
@@ -102,6 +112,8 @@ class PointCloudCombiner : public rclcpp::Node {
 
         std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
         std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+
+        Eigen::Matrix4f front_2_right_, front_2_left_;
 };
 
 #endif  // MERGE_CLOUDS_H

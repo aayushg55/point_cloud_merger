@@ -2,14 +2,20 @@
   ros__parameters:
 
     # Topics
-    front_pc_topic: "/luminar_front_points"         
-    left_pc_topic: "/luminar_left_points"           
-    right_pc_topic: "/luminar_right_points"              
+    # front_pc_topic: "/luminar_front_points"         
+    # left_pc_topic: "/luminar_left_points"           
+    # right_pc_topic: "/luminar_right_points"              
+    front_pc_topic: "/luminar_front/points"         
+    left_pc_topic: "/luminar_left/pointss"           
+    right_pc_topic: "/luminar_right/pointss"   
+    rear_pc_topic: "/luminar_rear/pointss"   
+
     merged_pc_topic: "/luminar_merged"    
 
     # Frames
     front_lidar_frame: "luminar_front"
     right_lidar_frame: "luminar_right"
     left_lidar_frame: "luminar_left"
+    rear_lidar_frame: "luminar_rear"
 
-    pub_freq: 60.0
+    pub_freq: 10.0

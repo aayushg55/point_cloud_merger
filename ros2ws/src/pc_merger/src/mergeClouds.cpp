@@ -18,6 +18,8 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     this->declare_parameter(PARAM_REAR_LIDAR_FRAME, "luminar_rear");
 
     this->declare_parameter(PARAM_PUB_FREQ, 30.0);
+    this->declare_parameter(PARAM_CROP_BOX_SIZE, 1.0);
+    this->declare_parameter(PARAM_VOXEL_RES, 0.25);
 
     // // Read parameters
     if (!this->get_parameter(PARAM_MERGED_PC_TOPIC, merged_pc_topic_)) {
@@ -52,6 +54,14 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     if (!this->get_parameter(PARAM_PUB_FREQ, pub_freq_)) {
         RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_PUB_FREQ.c_str());
     }
+
+    if (!this->get_parameter(PARAM_CROP_BOX_SIZE, crop_size_)) {
+        RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_CROP_BOX_SIZE.c_str());
+    }
+
+    if (!this->get_parameter(PARAM_VOXEL_RES, voxel_res_)) {
+        RCLCPP_WARN(this->get_logger(), "Parameter %s not found", PARAM_VOXEL_RES.c_str());
+    }    
 
     rclcpp::QoS qos_profile = rclcpp::QoS(rclcpp::KeepLast(1))  // Keep the last 10 messages
         .best_effort()            // Use best-effort reliability
@@ -96,6 +106,12 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     right_cloud_filtered_.reset(new pcl::PointCloud<PointType>());
     front_cloud_filtered_.reset(new pcl::PointCloud<PointType>());
     rear_cloud_filtered_.reset(new pcl::PointCloud<PointType>());
+
+    this->buff_capacity_ = 2;
+    this->front_buff_.set_capacity(this->buff_capacity_);
+    this->left_buff_.set_capacity(this->buff_capacity_);
+    this->right_buff_.set_capacity(this->buff_capacity_);
+    this->rear_buff_.set_capacity(this->buff_capacity_);
 
     tf_buffer_ = std::make_shared<tf2_ros::Buffer>(get_clock());
     tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
@@ -164,6 +180,13 @@ PointCloudCombiner::PointCloudCombiner(const std::string &name)
     //     new pcl::FieldComparison<PointType> ("intensity", pcl::ComparisonOps::GT, 0.5))
     // );
     // this->condrem_.setCondition(intensity_cond);
+
+    this->crop_.setNegative(true);
+    this->crop_.setMin(Eigen::Vector4f(-crop_size_, -crop_size_, -crop_size_, 1.0));
+    this->crop_.setMax(Eigen::Vector4f(crop_size_, crop_size_, crop_size_, 1.0));
+    
+    this->voxel_.setLeafSize(voxel_res_, voxel_res_, voxel_res_);
+
   }
 
 void PointCloudCombiner::timerCallback() {
@@ -183,29 +206,43 @@ pcl::PointCloud<PointType>::Ptr PointCloudCombiner::getTargetCloud(const std::st
     }
 }
 
-void PointCloudCombiner::filter(pcl::PointCloud<PointType>::Ptr cloud_in, pcl::PointCloud<PointType>::Ptr cloud_filtered) {
+void PointCloudCombiner::process(pcl::PointCloud<PointType>::Ptr cloud_in, pcl::PointCloud<PointType>::Ptr cloud_filtered, boost::circular_buffer<pcl::PointCloud<PointType>::Ptr>& buff,
+Eigen::Matrix4f transform,
+bool do_transform) {
     // this->sor_.setInputCloud(cloud);
     // this->sor_.filter(*cloud);
     // this->condrem_.setInputCloud(cloud);
     // this->condrem_.filter(*cloud);
-    cloud_filtered->clear();
+    // cloud_filtered->clear();
     // uint8_t threshold = 128;
-    for (const auto& point: cloud_in->points) {
-        // if (point.existence_probability_percent > threshold) {
-        //     cloud_filtered->push_back(point);
-        // }
-        cloud_filtered->push_back(point);
-    }
+    // for (const auto& point: cloud_in->points) {
+    //     // if (point.existence_probability_percent > threshold) {
+    //     //     cloud_filtered->push_back(point);
+    //     // }
+    //     cloud_filtered->push_back(point);
+    // }
+
+    // Crop Box Filter
+    this->crop_.setInputCloud(cloud_in);
+    this->crop_.filter(*cloud_in);
+
+    pcl::PointCloud<PointType>::Ptr new_cloud (new pcl::PointCloud<PointType>());
+
+    this->voxel_.setInputCloud(cloud_in);
+    this->voxel_.filter(*new_cloud);
+
+    if (do_transform)
+        pcl::transformPointCloud(*new_cloud, *new_cloud, transform);
+    buff.push_back(new_cloud);
 }
 
 void PointCloudCombiner::callbackRear(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg) {
+    rear_recv_ = true;
     rear_cloud_->clear();
 
     // Transform the point cloud to front_lidar_frame_
     pcl::fromROSMsg(*cloudMsg, *rear_cloud_);
-    filter(rear_cloud_, rear_cloud_filtered_);
-    pcl::transformPointCloud(*rear_cloud_filtered_, *rear_cloud_filtered_, front_2_rear_);
-
+    process(rear_cloud_, rear_cloud_filtered_, rear_buff_, front_2_rear_);
 }
 
 
@@ -218,11 +255,7 @@ void PointCloudCombiner::callbackLeft(const sensor_msgs::msg::PointCloud2::Share
     // Transform the point cloud to front_lidar_frame_
     pcl::fromROSMsg(*cloudMsg, *left_cloud_);
 
-    // printf("cloud had %d points\n", left_cloud_->points.size());
-    filter(left_cloud_, left_cloud_filtered_);
-    // printf("cloud has %d points\n", left_cloud_filtered_->points.size());
-
-    pcl::transformPointCloud(*left_cloud_filtered_, *left_cloud_filtered_, front_2_left_);
+    process(left_cloud_, left_cloud_filtered_, left_buff_, front_2_left_);
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
@@ -235,9 +268,7 @@ void PointCloudCombiner::callbackRight(const sensor_msgs::msg::PointCloud2::Shar
 
     // Transform the point cloud to front_lidar_frame_
     pcl::fromROSMsg(*cloudMsg, *right_cloud_);
-    filter(right_cloud_, right_cloud_filtered_);
-    pcl::transformPointCloud(*right_cloud_filtered_, *right_cloud_filtered_, front_2_right_);
-
+    process(right_cloud_, right_cloud_filtered_, right_buff_, front_2_right_);
 }
 
 void PointCloudCombiner::callbackFront(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg) {
@@ -246,25 +277,8 @@ void PointCloudCombiner::callbackFront(const sensor_msgs::msg::PointCloud2::Shar
     latest_time_ = cloudMsg->header.stamp;
 
     pcl::fromROSMsg(*cloudMsg, *front_cloud_);
-    
-    // double min_i, max_i;
-    // double mean_i;
-    // min_i = INFINITY;
-    // max_i = -INFINITY;
-    // mean_i = 0;
-    // for (int i = 0; i < front_cloud_->points.size(); i++) {
-    //     float val = (float) front_cloud_->points[i].existence_probability_percent;
 
-    //     double prob = val/255.0;
-    //     std::cout << prob << " " << val << std::endl;
-    //     min_i = std::min(min_i, prob);
-    //     max_i = std::max(max_i, prob);
-    //     mean_i += prob;
-    // }
-    // mean_i /= front_cloud_->points.size();
-    // printf("mean, max, min: %f %f %f \n", mean_i, max_i, min_i);
-
-    filter(front_cloud_, front_cloud_filtered_);
+    process(front_cloud_, front_cloud_filtered_, front_buff_, front_2_right_, false);
 }
 
 void PointCloudCombiner::cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName) {
@@ -295,18 +309,22 @@ void PointCloudCombiner::cloudHandler(const sensor_msgs::msg::PointCloud2::Share
 
 // Publish the combined point cloud
 void PointCloudCombiner::publishCombinedPointCloud() {
-    // if (!(left_recv_ && front_recv_ && right_recv_))
-    //     return;
+    if (!(left_recv_ && front_recv_ && right_recv_ && rear_recv_))
+        return;
     auto start = high_resolution_clock::now();
 
     // Merge the point clouds
     merged_cloud_->clear();
-    *merged_cloud_ += *left_cloud_filtered_;
-    *merged_cloud_ += *right_cloud_filtered_;
-    *merged_cloud_ += *front_cloud_filtered_;
-    *merged_cloud_ += *rear_cloud_filtered_;
 
-    // std::cout << "pub cloud with " << merged_cloud_->points.size() << std::endl;
+    // *merged_cloud_ += *left_cloud_filtered_;
+    // *merged_cloud_ += *right_cloud_filtered_;
+    // *merged_cloud_ += *front_cloud_filtered_;
+    // *merged_cloud_ += *rear_cloud_filtered_;
+
+    *merged_cloud_ += *left_buff_.back();
+    *merged_cloud_ += *right_buff_.back();
+    *merged_cloud_ += *rear_buff_.back();
+    *merged_cloud_ += *front_buff_.back();
 
     sensor_msgs::msg::PointCloud2 combined_msg;
     pcl::toROSMsg(*merged_cloud_, combined_msg);

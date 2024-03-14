@@ -24,6 +24,21 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include <pcl/registration/registration.h>
+#include <pcl/filters/crop_box.h>
+#include <pcl/filters/voxel_grid.h>
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/point_cloud2.hpp"
+#include <pcl_ros/transforms.hpp>
+#include <pcl_conversions/pcl_conversions.h>
+#include <pcl/common/common.h>
+#include <pcl/filters/statistical_outlier_removal.h>
+#include <pcl/filters/conditional_removal.h>
+#include <tf2/utils.h>
+#include <tf2_ros/transform_listener.h>
+
+// BOOST
+#include <boost/format.hpp>
+#include <boost/circular_buffer.hpp>
 
 // Point cloud format for Luminar lidar
 struct PointXYZIRT
@@ -51,16 +66,6 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZP,
     (float, reflectance, reflectance)
 )
 
-#include "rclcpp/rclcpp.hpp"
-#include "sensor_msgs/msg/point_cloud2.hpp"
-#include <pcl_ros/transforms.hpp>
-#include <pcl_conversions/pcl_conversions.h>
-#include <pcl/common/common.h>
-#include <pcl/filters/statistical_outlier_removal.h>
-#include <pcl/filters/conditional_removal.h>
-#include <tf2/utils.h>
-#include <tf2_ros/transform_listener.h>
-
 // typedef pcl::PointXYZ PointType;
 typedef PointXYZP PointType;
 
@@ -79,7 +84,11 @@ class PointCloudCombiner : public rclcpp::Node {
         void callbackFront(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
         void callbackRear(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
 
-        void filter(pcl::PointCloud<PointType>::Ptr cloud_in, pcl::PointCloud<PointType>::Ptr cloud_out);
+        void process(pcl::PointCloud<PointType>::Ptr cloud_in, 
+            pcl::PointCloud<PointType>::Ptr cloud_out, 
+            boost::circular_buffer<pcl::PointCloud<PointType>::Ptr>& buff,
+            Eigen::Matrix4f transform,
+            bool do_transform = true);
 
         pcl::PointCloud<PointType>::Ptr getTargetCloud(const std::string& topic);
 
@@ -95,8 +104,17 @@ class PointCloudCombiner : public rclcpp::Node {
         pcl::PointCloud<PointType>::Ptr right_cloud_filtered_;
         pcl::PointCloud<PointType>::Ptr rear_cloud_filtered_;
 
+        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> front_buff_;
+        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> left_buff_;
+        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> right_buff_;
+        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> rear_buff_;
+        int buff_capacity_;
+
         pcl::StatisticalOutlierRemoval<PointType> sor_;
         pcl::ConditionalRemoval<PointType> condrem_;
+        // Preprocessing
+        pcl::CropBox<PointType> crop_;
+        pcl::VoxelGrid<PointType> voxel_;
 
         const std::string PARAM_MERGED_PC_TOPIC = "merged_pc_topic";
         const std::string PARAM_FRONT_PC_TOPIC = "front_pc_topic";
@@ -110,6 +128,8 @@ class PointCloudCombiner : public rclcpp::Node {
         const std::string PARAM_REAR_LIDAR_FRAME = "rear_lidar_frame";
 
         const std::string PARAM_PUB_FREQ = "pub_freq";
+        const std::string PARAM_CROP_BOX_SIZE = "crop_size";
+        const std::string PARAM_VOXEL_RES = "voxel_res";
 
         std::string merged_pc_topic_;
         std::string front_pc_topic_;
@@ -123,6 +143,9 @@ class PointCloudCombiner : public rclcpp::Node {
         std::string rear_lidar_frame_;
 
         float pub_freq_;
+        double crop_size_;
+        double voxel_res_;
+
         rclcpp::Time latest_time_;
 
         int left_update_;
@@ -132,6 +155,7 @@ class PointCloudCombiner : public rclcpp::Node {
         std::atomic<bool> left_recv_;
         std::atomic<bool> front_recv_;
         std::atomic<bool> right_recv_;
+        std::atomic<bool> rear_recv_;
 
         // Callback groups
         rclcpp::CallbackGroup::SharedPtr left_cb_group, right_cb_group, front_cb_group, rear_cb_group;

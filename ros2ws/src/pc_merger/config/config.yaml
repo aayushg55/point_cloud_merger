@@ -6,9 +6,9 @@
     # left_pc_topic: "/luminar_left_points"           
     # right_pc_topic: "/luminar_right_points"              
     front_pc_topic: "/luminar_front/points"         
-    left_pc_topic: "/luminar_left/pointss"           
-    right_pc_topic: "/luminar_right/pointss"   
-    rear_pc_topic: "/luminar_rear/pointss"   
+    left_pc_topic: "/luminar_left/points"           
+    right_pc_topic: "/luminar_right/points"   
+    rear_pc_topic: "/luminar_rear/points"   
 
     merged_pc_topic: "/luminar_merged"    
 
@@ -18,4 +18,6 @@
     left_lidar_frame: "luminar_left"
     rear_lidar_frame: "luminar_rear"
 
-    pub_freq: 10.0
+    pub_freq: 12.0
+    crop_size: 3.0
+    voxel_res: 0.3

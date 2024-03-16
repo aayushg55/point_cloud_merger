@@ -57,13 +57,11 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIRT,
 struct PointXYZP
 {
     PCL_ADD_POINT4D;
-    uint8_t existence_probability_percent;
-    float reflectance;
+
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZP,
-    (float, x, x) (float, y, y) (float, z, z) (uint8_t, existence_probability_percent, existence_probability_percent)
-    (float, reflectance, reflectance)
+    (float, x, x) (float, y, y) (float, z, z) 
 )
 
 // typedef pcl::PointXYZ PointType;
@@ -71,43 +69,36 @@ typedef PointXYZP PointType;
 
 class PointCloudCombiner : public rclcpp::Node {
     public:
-
         PointCloudCombiner(const std::string &name);
         ~PointCloudCombiner() = default;
 
     private:
-        void publishCombinedPointCloud();
-        void timerCallback();
-        void cloudHandler(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string topicName);
-        void callbackRight(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
-        void callbackLeft(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
-        void callbackFront(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
-        void callbackRear(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg);
+        void publishCombinedPointcloud();
+        void callback(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string &topicName);
+        void processPointcloud(
+            pcl::PointCloud<PointType>::Ptr &cloud_in,
+            // boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>> &buff,
+            boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> &buff,
+            const Eigen::Matrix4f &transform,
+            const std::string &topicName,
+            const rclcpp::Time &timestamp);
 
-        void process(pcl::PointCloud<PointType>::Ptr cloud_in, 
-            pcl::PointCloud<PointType>::Ptr cloud_out, 
-            boost::circular_buffer<pcl::PointCloud<PointType>::Ptr>& buff,
-            Eigen::Matrix4f transform,
-            bool do_transform = true);
-
-        pcl::PointCloud<PointType>::Ptr getTargetCloud(const std::string& topic);
+        void declareAndGetParameters();
+        void createPublishers();
+        void createSubscribers();
+        void initializePointcloudsAndBuffers();
+        void setupTransforms();
+        void createTimer();
+        void setupFilters();
 
         // Point Clouds
         pcl::PointCloud<PointType>::Ptr merged_cloud_;
-        pcl::PointCloud<PointType>::Ptr front_cloud_;
-        pcl::PointCloud<PointType>::Ptr left_cloud_;
-        pcl::PointCloud<PointType>::Ptr right_cloud_;
-        pcl::PointCloud<PointType>::Ptr rear_cloud_;
+        // std::shared_ptr<pcl::PointCloud<PointType>> merged_cloud_;
+        std::unordered_map<std::string, pcl::PointCloud<PointType>::Ptr> pointclouds_;
+        // std::unordered_map<std::string, boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>>> circular_buffers_;
+        std::unordered_map<std::string, boost::circular_buffer<pcl::PointCloud<PointType>::Ptr>> circular_buffers_;
 
-        pcl::PointCloud<PointType>::Ptr front_cloud_filtered_;
-        pcl::PointCloud<PointType>::Ptr left_cloud_filtered_;
-        pcl::PointCloud<PointType>::Ptr right_cloud_filtered_;
-        pcl::PointCloud<PointType>::Ptr rear_cloud_filtered_;
 
-        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> front_buff_;
-        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> left_buff_;
-        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> right_buff_;
-        boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> rear_buff_;
         int buff_capacity_;
 
         pcl::StatisticalOutlierRemoval<PointType> sor_;
@@ -130,6 +121,7 @@ class PointCloudCombiner : public rclcpp::Node {
         const std::string PARAM_PUB_FREQ = "pub_freq";
         const std::string PARAM_CROP_BOX_SIZE = "crop_size";
         const std::string PARAM_VOXEL_RES = "voxel_res";
+        const std::string PARAM_USE_4_LIADR = "use_4_lidar";
 
         std::string merged_pc_topic_;
         std::string front_pc_topic_;
@@ -145,20 +137,10 @@ class PointCloudCombiner : public rclcpp::Node {
         float pub_freq_;
         double crop_size_;
         double voxel_res_;
+        bool use_4_lidar_;
+        bool front_rec_ = false;
 
         rclcpp::Time latest_time_;
-
-        int left_update_;
-        int right_update_;
-        int front_update_;
-
-        std::atomic<bool> left_recv_;
-        std::atomic<bool> front_recv_;
-        std::atomic<bool> right_recv_;
-        std::atomic<bool> rear_recv_;
-
-        // Callback groups
-        rclcpp::CallbackGroup::SharedPtr left_cb_group, right_cb_group, front_cb_group, rear_cb_group;
 
         //Publisher
         rclcpp::TimerBase::SharedPtr timer_;
@@ -173,7 +155,20 @@ class PointCloudCombiner : public rclcpp::Node {
         std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
         std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
 
-        Eigen::Matrix4f front_2_right_, front_2_left_, front_2_rear_;
+        std::unordered_map<std::string, Eigen::Matrix4f> transforms_;
+        std::vector<std::string> topics_;
 };
+
+// Helper function to declare and retrieve parameters
+template <typename T>
+struct identity { typedef T type; };
+
+template <typename T>
+void declare_param(rclcpp::Node* node, const std::string param_name, T& param, const typename identity<T>::type& default_value) {
+    node->declare_parameter(param_name, default_value);
+    if (!node->get_parameter(param_name, param)) {
+    RCLCPP_WARN(node->get_logger(), "Parameter %s not found", param_name.c_str());
+    }
+}
 
 #endif  // MERGE_CLOUDS_H

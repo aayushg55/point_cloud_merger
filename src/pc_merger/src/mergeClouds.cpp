@@ -39,6 +39,8 @@ void PointCloudCombiner::declareAndGetParameters() {
   declare_param(this, PARAM_CROP_BOX_SIZE, crop_size_, 3.0);
   declare_param(this, PARAM_VOXEL_RES, voxel_res_, 0.3);
   declare_param(this, PARAM_USE_4_LIADR, use_4_lidar_, true);
+  declare_param(this, PARAM_CUTOFF_DIST, cutoff_dist_, 80.0);
+  declare_param(this, PARAM_CUTOFF_ELEVATION, cutoff_elevation_, 0.0);
 
   topics_ = {left_pc_topic_, right_pc_topic_, front_pc_topic_};
   if (use_4_lidar_)
@@ -166,9 +168,12 @@ void PointCloudCombiner::createTimer() {
 
 void PointCloudCombiner::setupFilters() {
   // Setup crop box filter
-  crop_.setNegative(true);
-  crop_.setMin(Eigen::Vector4f(-crop_size_, -crop_size_, -crop_size_, 1.0));
-  crop_.setMax(Eigen::Vector4f(crop_size_, crop_size_, crop_size_, 1.0));
+  crop_rear_front_.setNegative(true);
+  crop_rear_front_.setMin(Eigen::Vector4f(-crop_size_, -crop_size_, -crop_size_, 1.0));
+  crop_rear_front_.setMax(Eigen::Vector4f(crop_size_, crop_size_, crop_size_, 1.0));
+  crop_left_right_.setNegative(true);
+  crop_left_right_.setMin(Eigen::Vector4f(-2, -3, -3, 1.0));
+  crop_left_right_.setMax(Eigen::Vector4f(2, 3, 3, 1.0));
 
   // Setup voxel grid filter
   voxel_.setLeafSize(voxel_res_, voxel_res_, voxel_res_);
@@ -200,9 +205,24 @@ void PointCloudCombiner::processPointcloud(
   pcl::PointCloud<PointType>::Ptr new_cloud (new pcl::PointCloud<PointType>());
 
   // Crop Box Filter
-  crop_.setInputCloud(cloud_in);
-  crop_.filter(*new_cloud);
+  for (auto& point : cloud_in->points) {
+    if (point.existence_probability_percent > 200 &&
+        (point.depth < cutoff_dist_) &&
+        (point.elevation > cutoff_elevation_)) {
+      new_cloud->push_back(point);
+    }
+  }
 
+  crop_rear_front_.setInputCloud(new_cloud);
+  crop_rear_front_.filter(*new_cloud);
+
+  // if (topicName == left_pc_topic_ || topicName == right_pc_topic_) {
+  //   crop_left_right_.setInputCloud(new_cloud);
+  //   crop_left_right_.filter(*new_cloud);
+  // } else {
+  //   crop_rear_front_.setInputCloud(new_cloud);
+  //   crop_rear_front_.filter(*new_cloud);
+  // }
 
   // // Voxel Grid Filter
   voxel_.setInputCloud(new_cloud);

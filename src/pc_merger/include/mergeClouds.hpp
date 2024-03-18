@@ -54,18 +54,23 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIRT,
     (float, ring, ring) (float, time, time)
 )
 
-struct PointXYZP
+struct PointXYZPDE
 {
     PCL_ADD_POINT4D;
-
+    uint8_t existence_probability_percent;
+    float depth;
+    float elevation;
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
-POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZP,
+POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZPDE,
     (float, x, x) (float, y, y) (float, z, z) 
+    (uint8_t, existence_probability_percent, existence_probability_percent)
+    (float, depth, depth)
+    (float, elevation, elevation)
 )
 
 // typedef pcl::PointXYZ PointType;
-typedef PointXYZP PointType;
+typedef PointXYZPDE PointType;
 
 class PointCloudCombiner : public rclcpp::Node {
     public:
@@ -104,7 +109,9 @@ class PointCloudCombiner : public rclcpp::Node {
         pcl::StatisticalOutlierRemoval<PointType> sor_;
         pcl::ConditionalRemoval<PointType> condrem_;
         // Preprocessing
-        pcl::CropBox<PointType> crop_;
+        pcl::CropBox<PointType> crop_rear_front_;
+        pcl::CropBox<PointType> crop_left_right_;
+
         pcl::VoxelGrid<PointType> voxel_;
 
         const std::string PARAM_MERGED_PC_TOPIC = "merged_pc_topic";
@@ -122,6 +129,8 @@ class PointCloudCombiner : public rclcpp::Node {
         const std::string PARAM_CROP_BOX_SIZE = "crop_size";
         const std::string PARAM_VOXEL_RES = "voxel_res";
         const std::string PARAM_USE_4_LIADR = "use_4_lidar";
+        const std::string PARAM_CUTOFF_DIST = "cutoff_dist";
+        const std::string PARAM_CUTOFF_ELEVATION = "cutoff_elevation";
 
         std::string merged_pc_topic_;
         std::string front_pc_topic_;
@@ -137,6 +146,9 @@ class PointCloudCombiner : public rclcpp::Node {
         float pub_freq_;
         double crop_size_;
         double voxel_res_;
+        double cutoff_dist_;
+        double cutoff_elevation_;
+
         bool use_4_lidar_;
         bool front_rec_ = false;
 

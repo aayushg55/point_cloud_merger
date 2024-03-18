@@ -40,6 +40,15 @@
 #include <boost/format.hpp>
 #include <boost/circular_buffer.hpp>
 
+template <typename T>
+std::string to_string_with_precision(const T a_value, const int n = 6)
+{
+    std::ostringstream out;
+    out.precision(n);
+    out << std::fixed << a_value;
+    return out.str();
+}
+
 // Point cloud format for Luminar lidar
 struct PointXYZIRT
 {
@@ -82,8 +91,8 @@ class PointCloudCombiner : public rclcpp::Node {
         void callback(const sensor_msgs::msg::PointCloud2::SharedPtr cloudMsg, const std::string &topicName);
         void processPointcloud(
             pcl::PointCloud<PointType>::Ptr &cloud_in,
-            // boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>> &buff,
-            boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> &buff,
+            boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>> &buff,
+            // boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> &buff,
             const Eigen::Matrix4f &transform,
             const std::string &topicName,
             const rclcpp::Time &timestamp);
@@ -100,8 +109,8 @@ class PointCloudCombiner : public rclcpp::Node {
         pcl::PointCloud<PointType>::Ptr merged_cloud_;
         // std::shared_ptr<pcl::PointCloud<PointType>> merged_cloud_;
         std::unordered_map<std::string, pcl::PointCloud<PointType>::Ptr> pointclouds_;
-        // std::unordered_map<std::string, boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>>> circular_buffers_;
-        std::unordered_map<std::string, boost::circular_buffer<pcl::PointCloud<PointType>::Ptr>> circular_buffers_;
+        std::unordered_map<std::string, boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>>> circular_buffers_;
+        // std::unordered_map<std::string, boost::circular_buffer<pcl::PointCloud<PointType>::Ptr>> circular_buffers_;
 
 
         int buff_capacity_;
@@ -148,10 +157,11 @@ class PointCloudCombiner : public rclcpp::Node {
         double voxel_res_;
         double cutoff_dist_;
         double cutoff_elevation_;
+        double cur_stamp_;
 
         bool use_4_lidar_;
-        bool front_rec_ = false;
-
+        std::unordered_map<std::string, bool> recv_;
+        
         rclcpp::Time latest_time_;
 
         //Publisher

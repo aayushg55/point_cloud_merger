@@ -91,10 +91,11 @@ void PointCloudCombiner::createSubscribers() {
   front_subscriber_ = create_subscriber(
       front_pc_topic_, front_cb_group,
       std::bind(&PointCloudCombiner::callback, this, std::placeholders::_1, front_pc_topic_));
-
-  rear_subscriber_ = create_subscriber(
-      rear_pc_topic_, rear_cb_group,
-      std::bind(&PointCloudCombiner::callback, this, std::placeholders::_1, rear_pc_topic_));
+  if (use_4_lidar_) {
+    rear_subscriber_ = create_subscriber(
+        rear_pc_topic_, rear_cb_group,
+        std::bind(&PointCloudCombiner::callback, this, std::placeholders::_1, rear_pc_topic_));
+  }
 }
 
 void PointCloudCombiner::initializePointcloudsAndBuffers() {
@@ -109,12 +110,13 @@ void PointCloudCombiner::initializePointcloudsAndBuffers() {
   // Initialize circular buffers with empty point clouds
   buff_capacity_ = 3;
   for (auto &topic : topics_) {
+    recv_[topic] = false;
     circular_buffers_[topic].set_capacity(buff_capacity_);
     for (int i = 0; i < buff_capacity_; ++i) {
-      // circular_buffers_[topic].push_back(std::make_pair(std::make_shared<pcl::PointCloud<PointType>>(), rclcpp::Time()));
       pcl::PointCloud<PointType>::Ptr new_cloud (new pcl::PointCloud<PointType>());
+      circular_buffers_[topic].push_back(std::make_pair(new_cloud, rclcpp::Time()));
 
-      circular_buffers_[topic].push_back(new_cloud);
+      // circular_buffers_[topic].push_back(new_cloud);
     }
   }
 }
@@ -160,9 +162,10 @@ void PointCloudCombiner::setupTransforms() {
 }
 
 void PointCloudCombiner::createTimer() {
-  int timer_dur = int(1000 / pub_freq_);
+  double timer_dur = 1.0 / pub_freq_;
+  cur_stamp_ = 0;
   timer_ = this->create_wall_timer(
-      std::chrono::milliseconds(timer_dur),
+      std::chrono::duration<double>(timer_dur),
       std::bind(&PointCloudCombiner::publishCombinedPointcloud, this));
 }
 
@@ -189,6 +192,7 @@ void PointCloudCombiner::callback(const sensor_msgs::msg::PointCloud2::SharedPtr
 
   // Transform the point cloud to front_lidar_frame_
   pcl::fromROSMsg(*cloudMsg, *point_cloud);
+  recv_[topic_name] = true;
 
   // Process the point cloud and add it to the circular buffer
   processPointcloud(point_cloud, circular_buffer, transforms_[topic_name], topic_name, cloudMsg->header.stamp);
@@ -196,8 +200,8 @@ void PointCloudCombiner::callback(const sensor_msgs::msg::PointCloud2::SharedPtr
 
 void PointCloudCombiner::processPointcloud(
     pcl::PointCloud<PointType>::Ptr &cloud_in,
-    boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> &buff,
-    // boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>> &buff,
+    // boost::circular_buffer<pcl::PointCloud<PointType>::Ptr> &buff,
+    boost::circular_buffer<std::pair<pcl::PointCloud<PointType>::Ptr, rclcpp::Time>> &buff,
     const Eigen::Matrix4f &transform,
     const std::string &topicName,
     const rclcpp::Time &timestamp) {
@@ -216,14 +220,6 @@ void PointCloudCombiner::processPointcloud(
   crop_rear_front_.setInputCloud(new_cloud);
   crop_rear_front_.filter(*new_cloud);
 
-  // if (topicName == left_pc_topic_ || topicName == right_pc_topic_) {
-  //   crop_left_right_.setInputCloud(new_cloud);
-  //   crop_left_right_.filter(*new_cloud);
-  // } else {
-  //   crop_rear_front_.setInputCloud(new_cloud);
-  //   crop_rear_front_.filter(*new_cloud);
-  // }
-
   // // Voxel Grid Filter
   voxel_.setInputCloud(new_cloud);
   voxel_.filter(*new_cloud);
@@ -232,46 +228,41 @@ void PointCloudCombiner::processPointcloud(
 
   pcl::transformPointCloud(*new_cloud, *new_cloud, transform);
 
-  if (topicName == front_pc_topic_) {
-    front_rec_ = true;
-    latest_time_ = timestamp;
-  }
+  latest_time_ = timestamp;
+  if (cur_stamp_ == 0)
+    cur_stamp_ = timestamp.seconds();
 
   // Add the transformed cloud to the circular buffer
-  buff.push_back(new_cloud);
-  // buff.push_back(std::make_pair(new_cloud, timestamp));
+  buff.push_back(std::make_pair(new_cloud, timestamp));
 }
 
 void PointCloudCombiner::publishCombinedPointcloud() {
-  if (front_rec_) {
-    // Merge the point clouds from the circular buffers
-    merged_cloud_->clear();
-    double avg_time = 0;
-    for (auto &topic : topics_) {
-      auto entry = circular_buffers_[topic].back();
-      // *merged_cloud_ += *(entry.first);
-      *merged_cloud_ += *(entry);
-      // avg_time += entry.second.seconds();
-    }
-    // avg_time /= topics_.size();
-
-    sensor_msgs::msg::PointCloud2 combined_msg;
-    pcl::toROSMsg(*merged_cloud_, combined_msg);
-    combined_msg.header.stamp = latest_time_;
-    // combined_msg.header.stamp = rclcpp::Time(avg_time);
-    combined_msg.header.frame_id = front_lidar_frame_;
-    combined_publisher_->publish(combined_msg);
+  
+  // Merge the point clouds from the circular buffers
+  merged_cloud_->clear();
+  double avg_time = 0;
+  for (auto &topic : topics_) {
+    if (!recv_[topic])
+      return;
+    auto entry = circular_buffers_[topic].back();
+    *merged_cloud_ += *(entry.first);
+    avg_time += entry.second.seconds();
   }
-
+  avg_time /= topics_.size();
+  sensor_msgs::msg::PointCloud2 combined_msg;
+  pcl::toROSMsg(*merged_cloud_, combined_msg);
+  // combined_msg.header.stamp = latest_time_;
+  
+  combined_msg.header.stamp = rclcpp::Time(static_cast<uint64_t>(avg_time * 1e9));
+  combined_msg.header.frame_id = front_lidar_frame_;
+  combined_publisher_->publish(combined_msg);
 
 }
 
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<PointCloudCombiner>("point_cloud_combiner");
-  // rclcpp::executors::MultiThreadedExecutor executor;
-  // executor.add_node(node);
-  // executor.spin();
+
   rclcpp::spin(node);
   rclcpp::shutdown();
   return 0;

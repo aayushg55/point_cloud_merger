@@ -20,6 +20,6 @@
 
     pub_freq: 13.0
     crop_size: 2.0
-    voxel_res: 0.20
-    cutoff_dist: 85.0
-    cutoff_elevation: 0.01
+    voxel_res: 0.2
+    cutoff_dist: 120.0
+    cutoff_elevation: 0.011
